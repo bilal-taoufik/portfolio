@@ -1,0 +1,16 @@
+@use "../partials/variables" as v;
+@use "../partials/functions" as f;
+
+@layer base {
+    // Animations
+    .image-hover_trigger {
+        transform: translateY(0) scale(1);
+        transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+        will-change: transform;
+        cursor: pointer;
+
+        &:hover {
+            transform: translateY(-6px) scale(1.06);
+        }
+    }
+}

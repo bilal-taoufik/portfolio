@@ -1,0 +1,70 @@
+@use "../partials/functions" as f;
+@use "../partials/mixins" as m;
+
+@layer components {
+    .button {
+        font-family: "Zen Dots", sans-serif;
+        display: flex;
+        width: fit-content;
+        height: f.rem(40);
+        align-items: center;
+        justify-content: center;
+        padding-right: f.rem(20);
+        padding-left: f.rem(20);
+
+        border: f.rem(2) solid transparent;
+        border-radius: f.rem(20);
+
+        font-weight: 500;
+        font-size: f.rem(16);
+        color: var(--white);
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        line-height: inherit;
+
+        background-image:
+            linear-gradient(var(--brand), var(--brand)),
+            linear-gradient(90deg, var(--white), var(--brand));
+        background-origin: border-box;
+        background-clip: padding-box, border-box;
+
+
+        &.is-small {
+            height: auto;
+            padding: f.rem(0) f.rem(26);
+            justify-content: center;
+            align-items: center;
+        }
+        &.is-secondary {
+            color: var(--white);
+            background-image:
+                linear-gradient(var(--brand-grey), var(--brand-grey)),
+                linear-gradient(90deg, var(--brand), var(--white));
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+        }
+        &.is-full {
+            width: auto;
+        }
+
+        &.is-icon {
+            display: flex;
+            padding-right: f.rem(0);
+            padding-left: f.rem(0);
+            justify-content: center;
+            align-items: center;
+            gap: f.rem(12);
+            background-image: none;
+            color: var(--brand);
+            svg {
+                display: flex;
+                width: f.rem(24);
+                height: f.rem(24);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+}

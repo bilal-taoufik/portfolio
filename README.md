@@ -1,55 +1,231 @@
-# ✨ Portfolio Personnel
+<p align="center">
+  <img src="./DesignGuide/dist/assets/img.png" alt="Design Guide Logo" width="120">
+</p>
 
-<div align="center">
+<h1 align="center">Design Guide SCSS</h1>
 
-![Portfolio Banner](https://img.shields.io/badge/Portfolio-En%20Ligne-brightgreen?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Actif-success?style=for-the-badge)
-![Version](https://img.shields.io/badge/Version-1.0.0-blue?style=for-the-badge)
+<p align="center">
+Design system réutilisable construit avec <strong>SCSS</strong> pour centraliser les styles, tokens, composants et bonnes pratiques front-end.
+</p>
 
-**Un portfolio moderne et élégant pour présenter mes projets et compétences**
+<p align="center">
+  <img src="https://img.shields.io/badge/SCSS-Design%20System-pink?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Vite-Frontend%20Tool-646CFF?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Architecture-Scalable-blue?style=for-the-badge">
+</p>
 
-[Site](https://bilal-taoufik.netlify.app/) • [Contact](mailto:bll.taoufik@gmail.com) • [LinkedIn](www.linkedin.com/in/bilal-t-642597275)
+------------------------------------------------------------------------
 
-</div>
+# Aperçu
 
----
+Ce repository contient un **design guide en SCSS** permettant de
+structurer proprement les styles d'un projet front-end.
 
-## 🎯 À Propos
+Le but est de créer une base **réutilisable, scalable et maintenable**
+pour tous les projets web.
 
-Bienvenue sur le repository de mon portfolio ! Ce site web représente mon parcours, mes compétences et mes réalisations dans le domaine du développement. Du design à la réalisation, avec une attention aux détails.
+Le design guide centralise :
 
-## ✨ Fonctionnalités
+-   les variables globales
+-   les tokens de design
+-   les styles HTML de base
+-   les composants UI
+-   les utilitaires
+-   les effets et animations
 
-- 🎨 **Design Moderne** - Interface utilisateur épurée et responsive
-- ⚡ **Performance Optimisée** - Chargement rapide et expérience fluide
-- 📱 **Responsive Design** - Parfait sur tous les appareils
-- 🎭 **Animations Fluides** - Transitions et interactions soignées
-- 🔍 **SEO Optimisé** - Meilleure visibilité sur les moteurs de recherche
+------------------------------------------------------------------------
 
-## 🛠️ Technologies Utilisées
+# Stack
 
-### Frontend
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+-   HTML
+-   SCSS
+-   Vite
+-   JavaScript
 
-### Outils & Déploiement
-![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
-![VS Code](https://img.shields.io/badge/VS%20Code-007ACC?style=flat-square&logo=visual-studio-code&logoColor=white)
+------------------------------------------------------------------------
 
-
-
-## 📬 Contact
-
-Email : bll.taoufik@gmail.com
-
-Lien du projet : [https://github.com/bilalTaoufik0/portfolio/tree/portfolioV2](https://github.com/bilalTaoufik0/portfolio/tree/portfolioV2)
-
----
-
-<div align="center">
+# Structure du projet
 
 
-**Chargé de développement de solutions applicative**
+    src/
+    ├── css/
+    │
+    │   ├── base/
+    │   │   ├── _animation.scss
+    │   │   ├── _colors.scss
+    │   │   ├── _effect.scss
+    │   │   ├── _image.scss
+    │   │   ├── _structure.scss
+    │   │   ├── _typography.scss
+    │   │   └── _utility.scss
+    │   │
+    │   ├── components/
+    │   │   ├── _buttons.scss
+    │   │   ├── _footer.scss
+    │   │   ├── _form.scss
+    │   │   └── _header.scss
+    │   │
+    │   ├── pages/
+    │   │   └── _design-guide.scss
+    │   │
+    │   ├── partials/
+    │   │   ├── _fonts.scss
+    │   │   ├── _functions.scss
+    │   │   ├── _globals.scss
+    │   │   ├── _layers.scss
+    │   │   ├── _mixins.scss
+    │   │   └── _variables.scss
+    │   │
+    │   ├── vendor/
+    │   │   └── modern-normalize.css
+    │   │
+    │   └── main.scss
+    │
 
-</div>
+------------------------------------------------------------------------
+
+# Organisation des dossiers
+
+## base
+
+Contient les styles fondamentaux du projet.
+
+-   animations globales
+-   couleurs
+-   effets
+-   images
+-   structure layout
+-   typographie
+-   utilitaires
+
+Ces styles sont appliqués globalement dans l'application.
+
+------------------------------------------------------------------------
+
+## components
+
+Contient les **composants UI réutilisables**.
+
+Exemples :
+
+-   boutons
+-   header
+-   footer
+-   formulaires
+
+Chaque composant possède son propre fichier SCSS.
+
+------------------------------------------------------------------------
+
+## pages
+
+Contient les styles spécifiques aux pages.
+
+Dans ce projet :
+
+-   `design-guide.scss` → page de documentation du design system
+
+------------------------------------------------------------------------
+
+## partials
+
+Contient les **fichiers fondamentaux utilisés par toute l'architecture
+SCSS**.
+
+-   variables
+-   fonctions
+-   mixins
+-   fonts
+-   globals
+-   layers
+
+Ces fichiers servent à construire les styles du projet.
+
+------------------------------------------------------------------------
+
+## vendor
+
+Contient les styles externes importés dans le projet.
+
+Exemple :
+
+-   `modern-normalize` pour normaliser les styles entre navigateurs.
+
+------------------------------------------------------------------------
+
+# Installation
+
+Cloner le repository
+
+``` bash
+git clone https://github.com/bilal-taoufik/design-guide.git
+```
+
+Installer les dépendances
+
+``` bash
+npm install
+```
+
+Lancer le serveur de développement
+
+``` bash
+npm run dev
+```
+
+Build de production
+
+``` bash
+npm run build
+```
+
+------------------------------------------------------------------------
+
+# Principes du Design System
+
+Ce design guide suit plusieurs principes :
+
+-   Cohérence visuelle
+-   Réutilisabilité
+-   Lisibilité du code
+-   Architecture claire
+-   Scalabilité
+
+Chaque style doit pouvoir être compris et modifié facilement.
+
+------------------------------------------------------------------------
+
+# Bonnes pratiques
+
+-   Utiliser les variables SCSS pour toutes les valeurs importantes
+-   Ne pas dupliquer les styles
+-   Créer des composants réutilisables
+-   Séparer clairement base / components / utilities
+-   Respecter la structure du projet
+
+------------------------------------------------------------------------
+
+# Personnalisation
+
+Pour adapter ce design guide à un autre projet :
+
+1.  Modifier les variables dans `_variables.scss`
+2.  Adapter les couleurs dans `_colors.scss`
+3.  Modifier la typographie dans `_typography.scss`
+4.  Adapter les composants dans `components/`
+
+------------------------------------------------------------------------
+
+# Auteur
+
+Bilal TAOUFIK
+
+Front-end development\
+Design systems\
+SCSS architecture
+
+------------------------------------------------------------------------
+
+# Licence
+
+Ce projet n’est pas libre d’utilisation. Toute reproduction, distribution ou utilisation du code, en tout ou en partie, est strictement interdite sans autorisation préalable de l’auteur.
