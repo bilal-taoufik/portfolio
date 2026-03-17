@@ -61,4 +61,136 @@
         display:flex;
         justify-content:space-between;
     }
+
+    /* =========================
+       DESKTOP STANDARD
+    ========================= */
+    @media screen and (max-width: 1440px) {
+        .footer-grid {
+            grid-template-columns: 1.8fr 1fr 1fr 1fr;
+            gap: f.rem(48);
+        }
+    }
+
+    @media screen and (max-width: 1280px) {
+        .footer-grid {
+            grid-template-columns: 1.6fr 1fr 1fr 1fr;
+        }
+
+        .social-icons {
+            gap: f.rem(16);
+        }
+
+        .footer-line {
+            margin: f.rem(40) 0;
+        }
+    }
+
+    /* =========================
+       TABLET / SMALL LAPTOP
+    ========================= */
+    @media screen and (max-width: 1024px) {
+        .footer-grid {
+            grid-template-columns: 1fr;
+            gap: f.rem(40) f.rem(32);
+        }
+
+        .footer-bottom {
+            flex-wrap: wrap;
+        }
+    }
+
+    /* =========================
+       TABLET PORTRAIT
+    ========================= */
+    @media screen and (max-width: 768px) {
+        .footer-grid {
+            grid-template-columns: 1fr 1fr;
+            gap: f.rem(32) f.rem(24);
+        }
+
+        .footer-brand svg {
+            margin-bottom: f.rem(18);
+        }
+
+        .social-icons {
+            gap: f.rem(14);
+            flex-wrap: wrap;
+        }
+
+        .footer-line {
+            margin: f.rem(32) 0;
+        }
+
+        .footer-bottom {
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: f.rem(10);
+        }
+    }
+
+    /* =========================
+       MOBILE LARGE
+    ========================= */
+    @media screen and (max-width: 576px) {
+        .footer-grid {
+            grid-template-columns: 1fr;
+            gap: f.rem(28);
+        }
+
+        .footer-links li {
+            margin-bottom: f.rem(10);
+        }
+
+        .social-icons {
+            gap: f.rem(12);
+        }
+
+        .footer-line {
+            margin: f.rem(28) 0;
+        }
+
+        .footer-bottom {
+            gap: f.rem(8);
+        }
+    }
+
+    /* =========================
+       SMALL MOBILE
+    ========================= */
+    @media screen and (max-width: 390px) {
+        .footer-grid {
+            gap: f.rem(24);
+        }
+
+        .footer-brand svg {
+            margin-bottom: f.rem(14);
+        }
+
+        .social-icons {
+            gap: f.rem(10);
+        }
+
+        .footer-line {
+            margin: f.rem(24) 0;
+        }
+    }
+
+    /* =========================
+       VERY SHORT VIEWPORTS
+    ========================= */
+    @media screen and (max-height: 760px) and (min-width: 769px) {
+        .footer-grid {
+            gap: f.rem(32);
+        }
+
+        .footer-line {
+            margin: f.rem(28) 0;
+        }
+
+        .footer-bottom {
+            gap: f.rem(16);
+        }
+    }
 }

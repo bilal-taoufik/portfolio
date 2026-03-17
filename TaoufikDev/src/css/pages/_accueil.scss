@@ -186,6 +186,16 @@
                     text-align: center;
                     transition: transform 0.3s ease, background-color 0.3s ease;
                     transform-origin: center center;
+                    svg {
+                        width: f.rem(50);
+                        height: f.rem(50);
+                    }
+                    span {
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        width: 100%;
+                    }
 
                     &:hover {
                         transform: scale(1.08);
@@ -547,6 +557,11 @@
                         border-radius: f.rem(16);
                         gap: f.rem(10);
 
+                        svg {
+                            width: f.rem(38);
+                            height: f.rem(38);
+                        }
+
                         &:hover {
                             transform: scale(1.04);
                         }
@@ -633,6 +648,10 @@
                         width: f.rem(68);
                         min-height: f.rem(96);
                         border-radius: f.rem(14);
+                        svg {
+                            width: f.rem(32);
+                            height: f.rem(32);
+                        }
                     }
                 }
             }
