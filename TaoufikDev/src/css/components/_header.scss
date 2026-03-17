@@ -3,16 +3,89 @@
 
 @layer components {
     .header-wrapper {
-        z-index: 1000;
         position: fixed;
-        inset: 0% 0% auto;
-        .header_component {
-            color: var();
-            background-color: var();
-            display: flex;
-            align-items: center;
-            padding-left: 7%;
-            padding-right: 7%;
+        inset: 0 0 auto 0;
+        z-index: 1000;
+        pointer-events: none;
+        padding-top: f.rem(24);
+    }
+
+    .header-component {
+        width: 100%;
+        min-height: f.rem(72);
+        padding-left: f.rem(50);
+        padding-right: f.rem(50);
+        border-radius: f.rem(999);
+        background: rgba(20, 20, 20, 0.72);
+        border: f.rem(1) solid rgba(255, 255, 255, 0.04);
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        pointer-events: auto;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .header-logo-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        text-decoration: none;
+    }
+
+    .header-nav {
+        display: flex;
+        align-items: center;
+    }
+
+    .header-nav-list {
+        display: flex;
+        align-items: center;
+        gap: f.rem(32);
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .header-nav-item {
+        display: flex;
+        align-items: center;
+    }
+
+    .header-nav-link {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+        color: var(--white);
+        font-size: f.rem(16);
+        font-family: "Zen Dots", sans-serif;
+        font-weight: 500;
+        line-height: 1;
+        transition: color 0.3s ease, opacity 0.3s ease;
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: f.rem(-6);
+            width: 100%;
+            height: f.rem(2);
+            background-color: var(--brand);
+            transform: scaleX(0);
+            transform-origin: center;
+            transition: transform 0.3s ease;
+        }
+
+        &:hover {
+            color: var(--brand);
+
+            &::after {
+                transform: scaleX(1);
+            }
         }
     }
 }

@@ -5,7 +5,6 @@
     .section_hero-accueil {
         width: 100%;
         min-height: 100svh;
-        height: 100svh;
         position: relative;
         overflow: hidden;
 
@@ -13,7 +12,7 @@
         align-items: center;
         justify-content: center;
 
-        background-image: url("/assets/bg-hero.png");
+        background-image: url("/assets/bg-hero-test.png");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -221,6 +220,517 @@
                 display: flex;
                 justify-content: center;
                 width: 100%;
+            }
+        }
+    }
+
+    /* =========================
+    LARGE DESKTOPS
+    ========================= */
+    @media screen and (min-width: 1600px) {
+        .section_hero-accueil {
+            .hero-content {
+                .hero-layout {
+                    .hero-text-wrapper {
+                        max-width: f.rem(980);
+
+                        .hero-title-group {
+                            .h1-hero {
+                                font-size: f.rem(112);
+                            }
+
+                            .hero-rotating-text {
+                                height: f.rem(112);
+
+                                span {
+                                    &.h2-hero {
+                                        font-size: f.rem(72);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .section_competences-accueil {
+            &::before {
+                width: 1700px;
+                height: 260px;
+                filter: blur(240px);
+            }
+        }
+    }
+
+    /* =========================
+    DESKTOP STANDARD
+    ========================= */
+    @media screen and (max-width: 1440px) {
+        .section_hero-accueil {
+            .hero-content {
+                .hero-layout {
+                    .hero-text-wrapper {
+                        max-width: f.rem(860);
+
+                        .hero-title-group {
+                            .h1-hero {
+                                font-size: f.rem(88);
+                            }
+
+                            .hero-rotating-text {
+                                height: f.rem(88);
+
+                                span {
+                                    &.h2-hero {
+                                        font-size: f.rem(58);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 1280px) {
+        .section_hero-accueil {
+            background-position: center center;
+
+            .hero-content {
+                .hero-layout {
+                    .hero-text-wrapper {
+                        max-width: f.rem(760);
+
+                        .hero-title-group {
+                            .h1-hero {
+                                font-size: f.rem(76);
+                            }
+
+                            .hero-rotating-text {
+                                height: f.rem(76);
+
+                                span {
+                                    &.h2-hero {
+                                        font-size: f.rem(52);
+                                    }
+                                }
+                            }
+                        }
+
+                        .hero-button-group {
+                            gap: f.rem(18);
+                            margin-top: f.rem(28);
+                        }
+                    }
+                }
+            }
+        }
+
+        .section_competences-accueil {
+            &::before {
+                width: 1200px;
+                height: 180px;
+                filter: blur(180px);
+            }
+
+            .competences-marquee {
+                .competences-track {
+                    gap: f.rem(24);
+
+                    .competence-card {
+                        width: f.rem(88);
+                        min-height: f.rem(126);
+                    }
+                }
+            }
+        }
+    }
+
+    /* =========================
+    TABLET / SMALL LAPTOP
+    ========================= */
+    @media screen and (max-width: 1024px) {
+        .section_hero-accueil {
+            min-height: 100svh;
+            height: auto;
+            background-position: center top;
+
+            .hero-content {
+                min-height: 100svh;
+                height: auto;
+
+                .hero-layout {
+                    height: auto;
+                    min-height: 100svh;
+                    justify-content: center;
+
+                    .hero-text-wrapper {
+                        width: 100%;
+                        max-width: f.rem(720);
+                        align-items: center;
+                        text-align: center;
+
+                        .hero-title-group {
+                            align-items: center;
+
+                            .h1-hero {
+                                font-size: f.rem(72);
+                            }
+
+                            .hero-rotating-text {
+                                height: f.rem(72);
+
+                                span {
+                                    justify-content: center;
+                                    right: auto;
+                                    width: 100%;
+
+                                    &.h2-hero {
+                                        font-size: f.rem(48);
+                                    }
+                                }
+                            }
+                        }
+
+                        .hero-button-group {
+                            justify-content: center;
+                            flex-wrap: wrap;
+                            gap: f.rem(16);
+                        }
+                    }
+                }
+            }
+        }
+
+        .section_projet-accueil {
+            .projet-wrapper {
+                .header-title {
+                    gap: f.rem(20);
+                }
+
+                .grid-2col {
+                    grid-template-columns: 1fr;
+                }
+            }
+        }
+
+        .section_competences-accueil {
+            &::before {
+                width: 1000px;
+                height: 180px;
+                filter: blur(150px);
+            }
+
+            .competences-marquee {
+                .competences-track {
+                    gap: f.rem(20);
+
+                    .competence-card {
+                        width: f.rem(84);
+                        min-height: f.rem(118);
+                        gap: f.rem(12);
+                    }
+                }
+            }
+        }
+
+        .section_formation-accueil {
+            .formation-wrapper {
+                .header-title {
+                    gap: f.rem(20);
+                }
+
+                .formation-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+        }
+    }
+
+    /* =========================
+    TABLET PORTRAIT
+    ========================= */
+    @media screen and (max-width: 768px) {
+        .section_hero-accueil {
+            min-height: auto;
+            height: auto;
+            padding-top: f.rem(140);
+            padding-bottom: f.rem(96);
+            background-size: cover;
+            background-position: left center;
+
+            .hero-content {
+                min-height: auto;
+                height: auto;
+
+                .hero-layout {
+                    min-height: auto;
+                    height: auto;
+                    justify-content: center;
+
+                    .hero-text-wrapper {
+                        align-items: center;
+                        text-align: center;
+
+                        .hero-title-group {
+                            .h1-hero {
+                                font-size: f.rem(60);
+                            }
+
+                            .hero-rotating-text {
+                                margin-top: f.rem(6);
+                                height: f.rem(60);
+
+                                span {
+                                    justify-content: center;
+
+                                    &.h2-hero {
+                                        font-size: f.rem(40);
+                                    }
+                                }
+                            }
+                        }
+
+                        p {
+                            max-width: 100%;
+                        }
+
+                        .hero-button-group {
+                            width: 100%;
+                            flex-direction: column;
+                            align-items: center;
+                            gap: f.rem(14);
+
+                            .button,
+                            a.button {
+                                width: 100%;
+                                max-width: f.rem(260);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .section_projet-accueil {
+            .projet-wrapper {
+                .header-title {
+                    gap: f.rem(14);
+
+                    .header-title-line {
+                        height: f.rem(2);
+                    }
+                }
+            }
+        }
+
+        .section_competences-accueil {
+            &::before {
+                width: 800px;
+                height: 140px;
+                filter: blur(120px);
+                transform: translate(-50%, -35%);
+            }
+
+            .competences-marquee {
+                padding: f.rem(16) 0;
+
+                .competences-track {
+                    gap: f.rem(16);
+
+                    .competence-card {
+                        width: f.rem(76);
+                        min-height: f.rem(108);
+                        padding: f.rem(8) f.rem(6);
+                        border-radius: f.rem(16);
+                        gap: f.rem(10);
+
+                        &:hover {
+                            transform: scale(1.04);
+                        }
+                    }
+                }
+            }
+        }
+
+        .section_formation-accueil {
+            .formation-wrapper {
+                .header-title {
+                    gap: f.rem(14);
+
+                    .header-title-line {
+                        height: f.rem(2);
+                    }
+                }
+            }
+        }
+    }
+
+    /* =========================
+    MOBILE LARGE
+    ========================= */
+    @media screen and (max-width: 576px) {
+        .section_hero-accueil {
+            padding-top: f.rem(120);
+            padding-bottom: f.rem(72);
+            background-position: left top;
+
+            .hero-content {
+                .hero-layout {
+                    .hero-text-wrapper {
+                        .hero-title-group {
+                            .h1-hero {
+                                font-size: f.rem(48);
+                                line-height: 0.95;
+                            }
+
+                            .hero-rotating-text {
+                                height: f.rem(48);
+
+                                span {
+                                    &.h2-hero {
+                                        font-size: f.rem(34);
+                                    }
+                                }
+                            }
+                        }
+
+                        .hero-button-group {
+                            margin-top: f.rem(22);
+                        }
+                    }
+                }
+            }
+        }
+
+        .section_projet-accueil {
+            .projet-wrapper {
+                .header-title {
+                    gap: f.rem(10);
+                    flex-wrap: nowrap;
+
+                    .header-title-line {
+                        min-width: 0;
+                    }
+                }
+            }
+        }
+
+        .section_competences-accueil {
+            &::before {
+                width: 620px;
+                height: 120px;
+                filter: blur(100px);
+            }
+
+            .competences-marquee {
+                .competences-track {
+                    gap: f.rem(14);
+
+                    .competence-card {
+                        width: f.rem(68);
+                        min-height: f.rem(96);
+                        border-radius: f.rem(14);
+                    }
+                }
+            }
+        }
+
+        .section_formation-accueil {
+            .formation-wrapper {
+                .header-title {
+                    gap: f.rem(10);
+                    flex-wrap: nowrap;
+
+                    .header-title-line {
+                        min-width: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    /* =========================
+    SMALL MOBILE
+    ========================= */
+    @media screen and (max-width: 390px) {
+        .section_hero-accueil {
+            padding-top: f.rem(108);
+            padding-bottom: f.rem(64);
+
+            .hero-content {
+                .hero-layout {
+                    .hero-text-wrapper {
+                        .hero-title-group {
+                            .h1-hero {
+                                font-size: f.rem(40);
+                            }
+
+                            .hero-rotating-text {
+                                height: f.rem(40);
+
+                                span {
+                                    &.h2-hero {
+                                        font-size: f.rem(28);
+                                    }
+                                }
+                            }
+                        }
+
+                        .hero-button-group {
+                            .button,
+                            a.button {
+                                max-width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .section_competences-accueil {
+            .competences-marquee {
+                .competences-track {
+                    .competence-card {
+                        width: f.rem(62);
+                        min-height: f.rem(90);
+                    }
+                }
+            }
+        }
+    }
+
+    /* =========================
+    VERY SHORT VIEWPORTS
+    ========================= */
+    @media screen and (max-height: 760px) and (min-width: 769px) {
+        .section_hero-accueil {
+            .hero-content {
+                .hero-layout {
+                    .hero-text-wrapper {
+                        .hero-title-group {
+                            .h1-hero {
+                                font-size: f.rem(72);
+                            }
+
+                            .hero-rotating-text {
+                                height: f.rem(72);
+
+                                span {
+                                    &.h2-hero {
+                                        font-size: f.rem(46);
+                                    }
+                                }
+                            }
+                        }
+
+                        .hero-button-group {
+                            margin-top: f.rem(20);
+                        }
+                    }
+                }
             }
         }
     }

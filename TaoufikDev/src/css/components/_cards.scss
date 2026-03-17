@@ -90,6 +90,7 @@
     .formation-card {
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
         min-height: f.rem(256);
         padding: f.rem(28) f.rem(28) f.rem(24);
         border-radius: f.rem(20);
@@ -104,6 +105,13 @@
             transform: translateY(f.rem(-4));
             border: f.rem(2) solid var(--brand-hover);
             box-shadow: 0 f.rem(10) f.rem(30) rgba(0, 0, 0, 0.15);
+        }
+
+        .formation-card-header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
         }
 
         &.formation-card--full {

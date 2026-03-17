@@ -1,12 +1,64 @@
 @use "../partials/functions" as f;
-@use "../partials/mixins" as m;
 
 @layer components {
-    .footer-wrapper {
-        overflow: hidden;
-        margin-top: auto;
-        .footer_component {
-            background-color: var(--white);
-        }
+    .footer-wrapper{
+        margin-top:auto;
+        background-color:var(--brand-grey);
+    }
+    .footer-grid{
+        display:grid;
+        grid-template-columns:2fr 1fr 1fr 1fr;
+        gap:f.rem(60);
+    }
+
+    .footer-brand svg{
+        margin-bottom:f.rem(24);
+    }
+
+    .footer-description{
+        max-width:f.rem(360);
+        color:var(--grey);
+        line-height:1.6;
+    }
+
+    .footer-links ul{
+        list-style:none;
+        padding:0;
+    }
+
+    .footer-links li{
+        margin-bottom:f.rem(12);
+    }
+
+    .footer-links a{
+        color:var(--body);
+        text-decoration:none;
+        transition:color .3s;
+    }
+
+    .footer-links a:hover{
+        color:var(--brand);
+    }
+
+    .social-icons{
+        display:flex;
+        gap:f.rem(20);
+    }
+
+    .social-icons a{
+        display:flex;
+        align-items:center;
+    }
+
+    .footer-line{
+        margin:f.rem(50) 0;
+        height:f.rem(2);
+        background:var(--brand);
+        width:100%;
+    }
+
+    .footer-bottom{
+        display:flex;
+        justify-content:space-between;
     }
 }
