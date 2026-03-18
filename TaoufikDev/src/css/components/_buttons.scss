@@ -67,4 +67,36 @@
             }
         }
     }
+
+    .button-icon {
+        font-family: "Zen Dots", sans-serif;
+        display: flex;
+        width: fit-content;
+        height: f.rem(40);
+        align-items: center;
+        justify-content: center;
+        padding-right: f.rem(20);
+        padding-left: f.rem(20);
+        gap: f.rem(10);
+
+        border: f.rem(2) solid transparent;
+        border-radius: f.rem(999);
+
+        font-weight: 500;
+        font-size: f.rem(16);
+        color: var(--white);
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        line-height: inherit;
+
+        background-image:
+            linear-gradient(var(--brand), var(--brand)),
+            linear-gradient(90deg, var(--white), var(--brand));
+        background-origin: border-box;
+        background-clip: padding-box, border-box;
+        &.is-full {
+            width: auto;
+        }
+    }
 }

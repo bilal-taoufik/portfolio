@@ -1,0 +1,38 @@
+@use "../partials/variables" as v;
+@use "../partials/functions" as f;
+
+@layer pages {
+    .section_mentions {
+        width: 100%;
+        min-height: 100svh;
+        overflow: hidden;
+
+        .hero-content {
+            width: 100%;
+            margin-top: f.rem(100);
+        }
+
+        .mentions-wrapper {
+            width: 100%;
+            margin: 0;
+
+            .header-title {
+                display: flex;
+                align-items: center;
+                gap: f.rem(32);
+
+                .header-title-line {
+                    flex: 1 1 auto;
+                    min-width: 0;
+                    height: f.rem(3);
+                    background-color: var(--brand);
+                }
+            }
+        }
+
+        .mentions-content {
+            width: 100%;
+            max-width: f.rem(980);
+        }
+    }
+}

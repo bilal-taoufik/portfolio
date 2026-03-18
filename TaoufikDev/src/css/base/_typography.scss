@@ -61,6 +61,7 @@
         margin: 0;
     }
     .heading-style-h1-regular {
+        font-family: "Zen Dots", sans-serif;
         font-size: clamp(f.rem(32), 2.2vw, f.rem(48));
         font-weight: 400;
         margin: 0;
@@ -72,6 +73,7 @@
         margin: 0;
     }
     .heading-style-h2-regular {
+        font-family: "Zen Dots", sans-serif;
         font-size: clamp(f.rem(28), 2vw, f.rem(40));
         line-height: 1.2;       
         font-weight: 400;

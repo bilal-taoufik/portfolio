@@ -111,12 +111,104 @@ function headerAnimation() {
     });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    initHeaderMenu();
-});
+function contactForm() {
+    const form = document.getElementById("contactForm");
+    const success = document.getElementById("contactSuccess");
+
+    if (!form || !success) return;
+
+    const nameInput = form.querySelector("#name");
+    const emailInput = form.querySelector("#email");
+    const phoneInput = form.querySelector("#phone");
+    const messageInput = form.querySelector("#message");
+    const submitButton = form.querySelector(".contact-submit");
+    const textElement = submitButton.querySelector("span");
+
+    if (!nameInput || !emailInput || !messageInput || !submitButton || !textElement) return;
+
+    // Empêche autre chose que des chiffres dans le téléphone
+    if (phoneInput) {
+        phoneInput.addEventListener("input", () => {
+            phoneInput.value = phoneInput.value.replace(/\D/g, "").slice(0, 10);
+        });
+    }
+
+    form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const name = nameInput.value.trim();
+        const email = emailInput.value.trim();
+        const message = messageInput.value.trim();
+        const phone = phoneInput ? phoneInput.value.trim() : "";
+
+        // Validation nom
+        if (!name) {
+            alert("Le nom est obligatoire.");
+            nameInput.focus();
+            return;
+        }
+
+        // Validation email
+        if (!email) {
+            alert("L'email est obligatoire.");
+            emailInput.focus();
+            return;
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            alert("Veuillez entrer une adresse email valide.");
+            emailInput.focus();
+            return;
+        }
+
+        // Validation message
+        if (!message) {
+            alert("Le message est obligatoire.");
+            messageInput.focus();
+            return;
+        }
+
+        // Validation téléphone
+        if (phone && !/^\d{1,10}$/.test(phone)) {
+            alert("Le numéro de téléphone doit contenir uniquement des chiffres, avec 10 maximum.");
+            phoneInput.focus();
+            return;
+        }
+
+        const originalText = textElement.textContent;
+
+        submitButton.disabled = true;
+        textElement.textContent = "Envoi...";
+
+        try {
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: new FormData(form),
+                headers: {
+                    Accept: "application/json"
+                }
+            });
+
+            if (response.ok) {
+                form.reset();
+                form.classList.add("is-hidden");
+                success.hidden = false;
+            } else {
+                alert("Une erreur est survenue. Merci de réessayer.");
+            }
+        } catch (error) {
+            alert("Une erreur est survenue. Merci de réessayer.");
+        } finally {
+            submitButton.disabled = false;
+            textElement.textContent = originalText;
+        }
+    });
+}
 
 document.addEventListener("DOMContentLoaded", () => {
     rotatateTitleHero();
     competencesCarousel();
     headerAnimation();
+    contactForm();
 });
