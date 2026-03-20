@@ -1,0 +1,52 @@
+@use "../partials/variables" as v;
+@use "../partials/functions" as f;
+
+@layer pages {
+    .section_projet {
+        width: 100%;
+        min-height: 100svh;
+        overflow: hidden;
+        .projet-wrapper {
+            width: 100%;
+            padding-top: f.rem(100);
+            .header-title {
+                display: flex;
+                align-items: center;
+                gap: f.rem(32);
+                .header-title-line {
+                    flex: 1 1 auto;
+                    min-width: 0; // autorise la ligne à se rétrécir
+                    height: f.rem(3);
+                    background-color: var(--brand);
+                }
+            }
+            .grid-2col {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: f.rem(24);
+            }
+            .button-wrapper {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+            }
+        }
+    }
+
+    /* =========================
+    TABLET / SMALL LAPTOP
+    ========================= */
+    @media screen and (max-width: 1024px) {
+        .section_projet {
+            .projet-wrapper {
+                .header-title {
+                    gap: f.rem(20);
+                }
+
+                .grid-2col {
+                    grid-template-columns: 1fr;
+                }
+            }
+        }
+    }
+}

@@ -16,7 +16,7 @@
         border-radius: f.rem(999);
 
         font-weight: 500;
-        font-size: f.rem(16);
+        font-size: f.rem(14);
         color: var(--white);
         cursor: pointer;
         text-align: center;
@@ -46,6 +46,12 @@
         }
         &.is-full {
             width: auto;
+        }
+        &.is-disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            pointer-events: none;
+            filter: grayscale(0.4);
         }
 
         &.is-icon {
@@ -83,7 +89,7 @@
         border-radius: f.rem(999);
 
         font-weight: 500;
-        font-size: f.rem(16);
+        font-size: f.rem(14);
         color: var(--white);
         cursor: pointer;
         text-align: center;
@@ -95,8 +101,22 @@
             linear-gradient(90deg, var(--white), var(--brand));
         background-origin: border-box;
         background-clip: padding-box, border-box;
+        &.is-secondary {
+            color: var(--white);
+            background-image:
+                linear-gradient(var(--brand-grey), var(--brand-grey)),
+                linear-gradient(90deg, var(--brand), var(--white));
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+        }
         &.is-full {
             width: auto;
+        }
+        &.is-disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            pointer-events: none;
+            filter: grayscale(0.4);
         }
     }
 }

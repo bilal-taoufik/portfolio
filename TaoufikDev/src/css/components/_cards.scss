@@ -21,6 +21,37 @@
             box-shadow: 0 f.rem(10) f.rem(30) rgba(0, 0, 0, 0.18);
         }
 
+        &.is-disabled {
+            position: relative;
+            pointer-events: none;
+            cursor: not-allowed;
+
+            &::after {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: rgba(0, 0, 0, 0.459);
+                z-index: 2;
+            }
+
+            img,
+            .card-body {
+                position: relative;
+                z-index: 1;
+            }
+
+            .fake-button,
+            svg {
+                transform: none !important;
+            }
+
+            &:hover {
+                transform: none;
+                border-color: var(--border-color);
+                box-shadow: none;
+            }
+        }
+
         img {
             display: block;
             width: 100%;

@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="module" src="/src/js/main.js"></script>
     <link rel="icon" type="image/png" href="/assets/favicon.png" />
+    <link rel="preload" as="image" href="/assets/bg-hero.png">
+    <link rel="preload" as="image" href="/assets/projets/Uvitec/uvitec.png">
+    <link rel="preload" as="image" href="/assets/projets/OhMyCleanServices/ohmycleanservices.png">
+
     <title>Développeur Full Stack | Taoufik Dev</title>
 
      <!-- Finsweet Cookie Consent -->
@@ -35,7 +39,7 @@
     <header class="header-wrapper">
         <div class="padding-global">
             <div class="header-component">
-                <a href="./index.html" class="header-logo-link" aria-label="Accueil">
+                <a href="/index.html" class="header-logo-link" aria-label="Accueil">
                     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M13.0602 26.776L16.7761 31.4208L24.0438 17.9782C25.4646 14.2623 22.5138 12.5684 20.9291 12.5684H7.65039L11.9127 17.9782H17.3772C17.7597 17.9782 17.705 18.3061 17.5957 18.47L13.0602 26.776Z" fill="#1C1C1C"/>
                         <path d="M24.0438 17.9782H30.8198L33.6613 12.623H28.3061C27.705 12.623 26.3389 13.4427 25.4646 15.1913L24.0438 17.9782Z" fill="#1C1C1C"/>
@@ -55,16 +59,16 @@
                 <nav class="header-nav" id="headerNav" aria-label="Navigation principale">
                     <ul class="header-nav-list">
                         <li class="header-nav-item">
-                            <a href="./index.html" class="header-nav-link">Accueil</a>
+                            <a href="/index.html" class="header-nav-link">Accueil</a>
                         </li>
                         <li class="header-nav-item">
-                            <a href="./projets.html" class="header-nav-link">Projets</a>
+                            <a href="/projets.html" class="header-nav-link">Projets</a>
                         </li>
                         <li class="header-nav-item">
-                            <a href="#competences" class="header-nav-link">Compétences</a>
+                            <a href="/index.html#competences" class="header-nav-link">Compétences</a>
                         </li>
                         <li class="header-nav-item">
-                            <a href="./contact.html" class="header-nav-link">Contact</a>
+                            <a href="/contact.html" class="header-nav-link">Contact</a>
                         </li>
                     </ul>
                 </nav>
@@ -93,8 +97,8 @@
                                 </p>
 
                                 <div class="hero-button-group">
-                                    <a href="./projets.html" class="button">Mes projets</a>
-                                    <a href="./contact.html" class="button is-secondary">Me contacter</a>
+                                    <a href="projets.html" class="button">Mes projets</a>
+                                    <a href="contact.html" class="button is-secondary">Me contacter</a>
                                 </div>
                             </div>
                         </div>
@@ -110,8 +114,8 @@
                             <div class="header-title-line"></div>
                         </div>
                         <div class="grid-2col">
-                            <a href="" class="projet-card">
-                                <img src="/assets/projets/uvitec.png" alt="Projet UVITEC">
+                            <a href="/projets/uvitec.html" class="projet-card">
+                                <img src="/assets/projets/Uvitec/uvitec.png" alt="Projet UVITEC">
                                 <div class="card-body">
                                     <h3 class="text-size-medium text-color-white">Site web Biotechnologie</h3>
                                     <div class="margin-top margin-medium">
@@ -135,8 +139,8 @@
                                     </div>
                                 </div>
                             </a>
-                            <a href="" class="projet-card">
-                                <img src="/assets/projets/ohmycleanservices.png" alt="Projet UVITEC">
+                            <a href="/projets/ohmycleanservices.html" class="projet-card">
+                                <img src="/assets/projets/OhMyCleanServices/ohmycleanservices.png" alt="Projet Oh My Clean Services">
                                 <div class="card-body">
                                     <h3 class="text-size-medium text-color-white">Site web lavage automobile & mobilier</h3>
                                     <div class="margin-top margin-medium">
@@ -163,7 +167,7 @@
                         </div>
                         <div class="button-wrapper">
                             <div class="margin-top margin-xlarge">
-                                <a href="./projets.html" class="button is-secondary">
+                                <a href="projets.html" class="button is-secondary">
                                     Tous mes projets
                                 </a>
                             </div>
@@ -734,7 +738,7 @@
             <div class="footer-grid">
 
                 <div class="footer-brand">
-                    <a href="index.html" class="footer-logo">
+                    <a href="/index.html" class="footer-logo">
                         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M13.06 26.776L16.7759 31.4208L24.0436 17.9782C25.4644 14.2623 22.5136 12.5684 20.9289 12.5684H7.65019L11.9125 17.9782H17.377C17.7595 17.9782 17.7048 18.3061 17.5955 18.47L13.06 26.776Z" fill="#1C1C1C"/>
                         <path d="M24.0436 17.9782H30.8196L33.6611 12.623H28.3059C27.7048 12.623 26.3387 13.4427 25.4644 15.1913L24.0436 17.9782Z" fill="#1C1C1C"/>
@@ -758,9 +762,9 @@
                     </div>
 
                     <ul>
-                        <li><a href="index.html">Accueil</a></li>
-                        <li><a href="projets.html">Projets</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="/index.html">Accueil</a></li>
+                        <li><a href="/projets.html">Projets</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
                     </ul>
                 </div>
 
@@ -771,7 +775,7 @@
 
                     <ul>
                         <li><a fs-cc="open-preferences" role="button" tabindex="0" title="Cookie Preferences" aria-label="Cookie Preferences" href="#" class="fs-cc-manager2_button-footer">Cookies</a></li>
-                        <li><a href="mentions-legales.html">Mentions légales</a></li>
+                        <li><a href="/mentions-legales.html">Mentions légales</a></li>
                     </ul>
                 </div>
 
