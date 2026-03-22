@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="/src/js/main.js"></script>
+    <link rel="icon" type="image/png" href="/assets/favicon.png" />
+    <title>Développement et Migration sur Webflow du site UVITEC Cambridge | Taoufik Dev</title>
+
+     <!-- Finsweet Cookie Consent -->
+    <script async src="https://cdn.jsdelivr.net/npm/@finsweet/cookie-consent@1/fs-cc.js"></script>
+
+    <!-- Exemple scripts bloqués -->
+    <!--
+    <script
+        type="fs-cc"
+        fs-cc-categories="analytics"
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX">
+    </script>
+
+    <script type="fs-cc" fs-cc-categories="analytics">
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag("js", new Date());
+        gtag("config", "G-XXXXXXXXXX");
+    </script>
+    -->
+    <!-- 
+    <script type="fs-cc" fs-cc-categories="marketing">
+        console.log("marketing cookies allowed");
+    </script>     -->
+</head>
+<body>
+    <header class="header-wrapper">
+        <div class="padding-global">
+            <div class="header-component">
+                <a href="/index.html" class="header-logo-link" aria-label="Accueil">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.0602 26.776L16.7761 31.4208L24.0438 17.9782C25.4646 14.2623 22.5138 12.5684 20.9291 12.5684H7.65039L11.9127 17.9782H17.3772C17.7597 17.9782 17.705 18.3061 17.5957 18.47L13.0602 26.776Z" fill="#1C1C1C"/>
+                        <path d="M24.0438 17.9782H30.8198L33.6613 12.623H28.3061C27.705 12.623 26.3389 13.4427 25.4646 15.1913L24.0438 17.9782Z" fill="#1C1C1C"/>
+                        <path d="M11.8578 26.776L15.5736 31.4208L22.8414 17.9782C24.2621 14.2623 21.3113 12.5684 19.7266 12.5684H6.44792L10.7102 17.9782H16.1747C16.5572 17.9782 16.5026 18.3061 16.3933 18.47L11.8578 26.776Z" fill="#E96103"/>
+                        <path d="M22.8414 17.9782H29.6173L32.4589 12.623H27.1037C26.5026 12.623 25.1364 13.4427 24.2621 15.1913L22.8414 17.9782Z" fill="#E96103"/>
+                        <path d="M21.4749 37.2495V40H40V0H21.4749V2.7112H37.5615V37.2495H21.4749Z" fill="#E96103"/>
+                        <path d="M0 0H18.7611V2.7112H2.71386V37.2495H18.7611V40H0V0Z" fill="#E96103"/>
+                    </svg>
+                </a>
+
+                <button class="header-menu-button" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="headerNav">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <nav class="header-nav" id="headerNav" aria-label="Navigation principale">
+                    <ul class="header-nav-list">
+                        <li class="header-nav-item">
+                            <a href="/index.html" class="header-nav-link">Accueil</a>
+                        </li>
+                        <li class="header-nav-item">
+                            <a href="/projets.html" class="header-nav-link">Projets</a>
+                        </li>
+                        <li class="header-nav-item">
+                            <a href="/index.html#competences" class="header-nav-link">Compétences</a>
+                        </li>
+                        <li class="header-nav-item">
+                            <a href="/contact.html" class="header-nav-link">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-wrapper">
+        <div class="page-wrapper">
+            <section class="section_details">
+                <div class="padding-global padding-section-large">
+                    <div class="hero-content">
+                        <div class="details-wrapper">
+                            <div class="header-title margin-bottom margin-xlarge">
+                                <svg width="162" height="50" viewBox="0 0 162 50" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <rect width="162" height="50" fill="url(#pattern0_6154_1147)"/>
+                                <defs>
+                                <pattern id="pattern0_6154_1147" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_6154_1147" transform="matrix(0.000698285 0 0 0.00226244 -0.000670354 0)"/>
+                                </pattern>
+                                <image id="image0_6154_1147" width="1434" height="442" preserveAspectRatio="none" xlink:href="data:image/png;base64,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"/>
+                                </defs>
+                                </svg>
+                                <div class="header-title-line"></div>
+                            </div>
+                            <div class="details-illustration margin-bottom margin-xlarge">
+                                <img class="details-device--laptop"
+                                    src="/assets/projets/Uvitec/Macbook-Air - uvitec.png"
+                                    alt="Version desktop Uvitec"
+                                >
+                                <img class="details-device--phone"
+                                    src="/assets/projets/Uvitec/iPhone - uvitec.png"
+                                    alt="Version mobile Uvitec"
+                                >
+                            </div>
+
+                            <div class="details-grid">
+                                <div class="details-main-card">
+                                    <div class="margin-bottom margin-large">
+                                        <h2 class="heading-style-h4-regular text-color-brand margin-bottom margin-large">
+                                            À propos du projet
+                                        </h2>
+                                    </div>
+
+                                    <div class="details-richtext text-color-white">
+                                        <p class="text-size-regular margin-bottom margin-small">
+                                            J'ai conçu et développé le site web de <span class="text-weight-semibold">UVITEC</span>,
+                                            une entreprise spécialisée dans les solutions d'imagerie scientifique et les équipements de laboratoire. 
+                                            Le site a été réalisé sur <span class="text-weight-semibold">Webflow</span> avec l'objectif de proposer 
+                                            une plateforme moderne, claire et adaptée à une audience internationale.
+                                        </p>
+
+                                        <p class="text-size-regular margin-bottom margin-small">
+                                            Le projet a été pensé pour mettre en valeur <span class="text-weight-semibold">les produits, les technologies et les applications scientifiques</span>, 
+                                            de l'entreprise à travers une interface moderne et structurée. Une attention particulière a été portée à
+                                            <span class="text-weight-semibold"> l'expérience utilisateur, à la lisibilité du contenu et à la présentation des équipements.
+                                        </p>
+
+                                        <p class="text-size-regular margin-bottom margin-large">
+                                            Le site a également été optimisé pour offrir de <span class="text-weight-semibold">bonnes performances et un référencement naturel efficace (SEO)</span>,
+                                            permettant d'améliorer la visibilité de l'entreprise sur les moteurs de recherche et de faciliter l'accès aux informations techniques pour les clients et partenaires. 
+                                            Grâce à son architecture claire et ses performances optimisées, le site constitue aujourd'hui un outil digital solide pour la communication et la présentation des solutions UVITEC.
+                                        </p>
+                                    </div>
+
+                                    <div class="details-score-card">
+                                        <img
+                                            src="/assets/projets/Uvitec/lighthouse-score.png"
+                                            alt="Scores Lighthouse Uvitec"
+                                        >
+                                    </div>
+                                </div>
+
+                                <aside class="details-side-card">
+                                    <div class="margin-bottom margin-large">
+                                        <h2 class="heading-style-h5-regular text-color-brand margin-bottom margin-large">
+                                            Informations
+                                        </h2>
+                                    </div>
+
+                                    <div class="details-side-content margin-bottom margin-large">
+                                        <div class="details-info-block margin-bottom margin-large">
+                                            <p class="text-size-small text-color-body text-style-allcaps margin-bottom margin-small">Statut</p>
+                                            <p class="text-size-medium text-color-white text-weight-semibold">Complété</p>
+                                        </div>
+
+                                        <div class="details-info-block margin-bottom margin-large">
+                                            <p class="text-size-small text-color-body text-style-allcaps margin-bottom margin-small">Type</p>
+                                            <p class="text-size-medium text-color-white text-weight-semibold">Application Web</p>
+                                        </div>
+
+                                        <div class="details-info-block">
+                                            <p class="text-size-small text-color-body text-style-allcaps margin-bottom margin-small">Année</p>
+                                            <p class="text-size-medium text-color-white text-weight-semibold">2026</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="details-side-separator margin-bottom margin-large"></div>
+
+                                    <div class="details-side-actions">
+                                        <a href="https://www.uvitec.co.uk/" target="_blank" rel="noopener noreferrer" class="button-icon is-full">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12.5 2.5H17.5V7.5" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M8.33337 11.6667L17.5 2.5" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M15 10.8333V15.8333C15 16.2754 14.8244 16.6993 14.5118 17.0118C14.1993 17.3244 13.7754 17.5 13.3333 17.5H4.16667C3.72464 17.5 3.30072 17.3244 2.98816 17.0118C2.67559 16.6993 2.5 16.2754 2.5 15.8333V6.66667C2.5 6.22464 2.67559 5.80072 2.98816 5.48816C3.30072 5.17559 3.72464 5 4.16667 5H9.16667" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+
+                                            Voir le site
+                                        </a>
+
+                                        <a href="" class="button-icon is-secondary is-full is-disabled" aria-disabled="true">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M7.5 15.8333C3.33333 17.0833 3.33333 13.75 1.66667 13.3333M13.3333 18.3333V15.1083C13.3646 14.7104 13.311 14.3105 13.1763 13.9349C13.0415 13.5593 12.8288 13.2165 12.5525 12.9283C15.1583 12.6367 17.5 11.65 17.5 7.125C17.4998 5.96771 17.0545 4.85485 16.2567 4.01667C16.6348 3.00348 16.6081 1.8836 16.1817 0.889999C16.1817 0.889999 15.2 0.598333 13.3333 1.85C11.4267 1.33343 9.42 1.33343 7.51334 1.85C5.64667 0.598333 4.66501 0.889999 4.66501 0.889999C4.23861 1.8836 4.21188 3.00348 4.59001 4.01667C3.78625 4.86107 3.34053 5.98478 3.34667 7.15C3.34667 11.6417 5.68834 12.6283 8.29417 12.9533C8.02117 13.2386 7.81028 13.5776 7.67482 13.9488C7.53936 14.32 7.48242 14.7155 7.5075 15.11V18.3333" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+
+                                            Code source
+                                        </a>
+                                    </div>
+                                </aside>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="cookie-component">
+            <div fs-cc="banner" class="fs-cc-banner2_component">
+                <div class="fs-cc-banner2_container">
+                <div class="fs-cc-banner2_text">
+                    En cliquant sur « Accepter les cookies », vous consentez à l'enregistrement de cookies sur votre appareil afin d'améliorer la navigation sur le site, d'analyser son utilisation et de soutenir nos efforts marketing.
+                </div>
+
+                <div class="fs-cc-banner2_buttons-wrapper">
+                    <button fs-cc="open-preferences" type="button" class="button is-secondary">
+                    Mes préférences
+                    </button>
+
+                    <button fs-cc="allow" type="button" class="button fs-cc-banner2_button">
+                    Accepter les Cookies
+                    </button>
+                </div>
+                </div>
+            </div>
+
+            <div fs-cc="preferences" fs-cc-scroll="disable" class="fs-cc-prefs2_component">
+                <div class="fs-cc-prefs2_overlay" fs-cc="close"></div>
+
+                <div class="fs-cc-prefs2_form-wrapper">
+                <form id="cookie-preferences" class="fs-cc-prefs2_form">
+                    <button fs-cc="close" type="button" class="fs-cc-prefs2_close" aria-label="Close cookie preferences">
+                    <svg fill="currentColor" aria-hidden="true" focusable="false" viewBox="0 0 16 16">
+                        <path d="M9.414 8l4.293-4.293-1.414-1.414L8 6.586 3.707 2.293 2.293 3.707 6.586 8l-4.293 4.293 1.414 1.414L8 9.414l4.293 4.293 1.414-1.414L9.414 8z"></path>
+                    </svg>
+                    </button>
+
+                    <div class="fs-cc-prefs2_content">
+                    <div class="fs-cc-prefs2_header">
+                        <h3 class="fs-cc-prefs2_title">Gestion de la confidentialité</h3>
+                        <p class="fs-cc-prefs2_text">
+                        Choisissez les cookies que vous souhaitez autoriser. Les cookies essentiels sont nécessaires au bon fonctionnement du site web.
+                        </p>
+                    </div>
+
+                    <div class="fs-cc-prefs2_option">
+                        <div class="fs-cc-prefs2_toggle-wrapper">
+                        <div>
+                            <div class="fs-cc-prefs2_label">Essentiel</div>
+                            <div class="fs-cc-prefs2_description">
+                            Nécessaire au bon fonctionnement du site web.
+                            </div>
+                        </div>
+                        <div class="fs-cc-prefs2_required">Requis</div>
+                        </div>
+                    </div>
+
+                    <div class="fs-cc-prefs2_option">
+                        <div class="fs-cc-prefs2_toggle-wrapper">
+                        <div>
+                            <div class="fs-cc-prefs2_label">Marketing</div>
+                            <div class="fs-cc-prefs2_description">
+                            Utilisé pour diffuser des publicités et des campagnes marketing pertinentes.
+                            </div>
+                        </div>
+
+                        <label class="fs-cc-prefs2_checkbox-field" for="marketing-2">
+                            <input
+                            type="checkbox"
+                            name="marketing-2"
+                            id="marketing-2"
+                            fs-cc-checkbox="marketing"
+                            class="fs-cc-prefs2_checkbox-input"
+                            >
+                            <span class="fs-cc-prefs2_checkbox-ui"></span>
+                        </label>
+                        </div>
+                    </div>
+
+                    <div class="fs-cc-prefs2_option">
+                        <div class="fs-cc-prefs2_toggle-wrapper">
+                        <div>
+                            <div class="fs-cc-prefs2_label">Personnalisation</div>
+                            <div class="fs-cc-prefs2_description">
+                            Permet au site de mémoriser vos préférences et de vous proposer des fonctionnalités améliorées.
+                            </div>
+                        </div>
+
+                        <label class="fs-cc-prefs2_checkbox-field" for="personalization-2">
+                            <input
+                            type="checkbox"
+                            name="personalization-2"
+                            id="personalization-2"
+                            fs-cc-checkbox="personalization"
+                            class="fs-cc-prefs2_checkbox-input"
+                            >
+                            <span class="fs-cc-prefs2_checkbox-ui"></span>
+                        </label>
+                        </div>
+                    </div>
+
+                    <div class="fs-cc-prefs2_option">
+                        <div class="fs-cc-prefs2_toggle-wrapper">
+                        <div>
+                            <div class="fs-cc-prefs2_label">Analytics</div>
+                            <div class="fs-cc-prefs2_description">
+                            Cela nous aide à comprendre comment les visiteurs interagissent avec le site web.
+                            </div>
+                        </div>
+
+                        <label class="fs-cc-prefs2_checkbox-field" for="analytics-2">
+                            <input
+                            type="checkbox"
+                            name="analytics-2"
+                            id="analytics-2"
+                            fs-cc-checkbox="analytics"
+                            class="fs-cc-prefs2_checkbox-input"
+                            >
+                            <span class="fs-cc-prefs2_checkbox-ui"></span>
+                        </label>
+                        </div>
+                    </div>
+
+                    <div class="fs-cc-prefs2_buttons-wrapper">
+                        <div class="fs-cc-prefs2_buttons-container">
+                        <button fs-cc="deny" type="button" class="button fs-cc-banner2_button is-secondary">
+                            Tout rejeter
+                        </button>
+
+                        <button fs-cc="allow" type="button" class="button fs-cc-banner2_button">
+                            Tout accepter
+                        </button>
+                        </div>
+
+                        <button fs-cc="submit" type="submit" class="button fs-cc-banner2_button is-secondary is-full">
+                        Enregistrer mes préférences
+                        </button>
+                    </div>
+                    </div>
+                </form>
+
+                <div class="w-form-done" tabindex="-1" role="region" aria-label="Cookie Preferences success">
+                    Your preferences have been saved.
+                </div>
+
+                <div class="w-form-fail" tabindex="-1" role="region" aria-label="Cookie Preferences failure">
+                    Something went wrong. Please try again.
+                </div>
+                </div>
+            </div>
+
+            <!-- <button fs-cc="open-preferences" type="button" class="cookie-settings-trigger button is-secondary">
+                Manage cookies
+            </button> -->
+        </div>
+    </main>
+    <footer class="footer-wrapper">
+        <div class="padding-global padding-section-large">
+            <div class="footer-grid">
+
+                <div class="footer-brand">
+                    <a href="/index.html" class="footer-logo">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.06 26.776L16.7759 31.4208L24.0436 17.9782C25.4644 14.2623 22.5136 12.5684 20.9289 12.5684H7.65019L11.9125 17.9782H17.377C17.7595 17.9782 17.7048 18.3061 17.5955 18.47L13.06 26.776Z" fill="#1C1C1C"/>
+                        <path d="M24.0436 17.9782H30.8196L33.6611 12.623H28.3059C27.7048 12.623 26.3387 13.4427 25.4644 15.1913L24.0436 17.9782Z" fill="#1C1C1C"/>
+                        <path d="M11.8579 26.776L15.5737 31.4208L22.8415 17.9782C24.2623 14.2623 21.3114 12.5684 19.7267 12.5684H6.44804L10.7103 17.9782H16.1748C16.5573 17.9782 16.5027 18.3061 16.3934 18.47L11.8579 26.776Z" fill="#E96103"/>
+                        <path d="M22.8415 17.9782H29.6174L32.459 12.623H27.1038C26.5027 12.623 25.1366 13.4427 24.2623 15.1913L22.8415 17.9782Z" fill="#E96103"/>
+                        <path d="M21.4749 37.2495V40H40V0H21.4749V2.7112H37.5615V37.2495H21.4749Z" fill="#E96103"/>
+                        <path d="M0 0H18.7611V2.7112H2.71386V37.2495H18.7611V40H0V0Z" fill="#E96103"/>
+                        </svg>
+                    </a>
+                    <div class="max-width-small">
+                        <p class="text-size-medium text-color-body">
+                            Développeur Full Stack passionné par la création
+                            de solutions web modernes et performantes.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <div class="margin-bottom margin-small">
+                        <h3 class="heading-style-h5-regular text-color-white">LIENS RAPIDES</h3>
+                    </div>
+
+                    <ul>
+                        <li><a href="/index.html">Accueil</a></li>
+                        <li><a href="/projets.html">Projets</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <div class="margin-bottom margin-small">
+                        <h3 class="heading-style-h5-regular text-color-white">RESSOURCES</h3>
+                    </div>
+
+                    <ul>
+                        <li><a fs-cc="open-preferences" role="button" tabindex="0" title="Cookie Preferences" aria-label="Cookie Preferences" href="#" class="fs-cc-manager2_button-footer">Cookies</a></li>
+                        <li><a href="/mentions-legales.html">Mentions légales</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-socials">
+                    <div class="margin-bottom margin-small">
+                        <h3 class="heading-style-h5-regular text-color-white">RÉSEAUX SOCIAUX</h3>
+                    </div>
+
+                    <div class="social-icons">
+
+                        <a href="https://github.com/bilal-taoufik" target="_blank">
+                            <!-- github -->
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.5 18.3334V15.0001C12.6159 13.9562 12.3166 12.9085 11.6667 12.0834C14.1667 12.0834 16.6667 10.4167 16.6667 7.50008C16.7333 6.45841 16.4417 5.43341 15.8333 4.58341C16.0667 3.62508 16.0667 2.62508 15.8333 1.66675C15.8333 1.66675 15 1.66675 13.3333 2.91675C11.1333 2.50008 8.86666 2.50008 6.66666 2.91675C4.99999 1.66675 4.16666 1.66675 4.16666 1.66675C3.91666 2.62508 3.91666 3.62508 4.16666 4.58341C3.55988 5.42998 3.26538 6.46074 3.33332 7.50008C3.33332 10.4167 5.83332 12.0834 8.33332 12.0834C8.00832 12.4917 7.76666 12.9584 7.62499 13.4584C7.48332 13.9584 7.44166 14.4834 7.49999 15.0001V18.3334" stroke="#E96103" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M7.49996 14.9999C3.74163 16.6666 3.33329 13.3333 1.66663 13.3333" stroke="#E96103" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/bilal-t-642597275/" target="_blank">
+                            <!-- linkedin -->
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.3334 6.66675C14.6595 6.66675 15.9312 7.19353 16.8689 8.13121C17.8066 9.0689 18.3334 10.3407 18.3334 11.6667V17.5001H15V11.6667C15 11.2247 14.8244 10.8008 14.5119 10.4882C14.1993 10.1757 13.7754 10.0001 13.3334 10.0001C12.8913 10.0001 12.4674 10.1757 12.1549 10.4882C11.8423 10.8008 11.6667 11.2247 11.6667 11.6667V17.5001H8.33337V11.6667C8.33337 10.3407 8.86016 9.0689 9.79784 8.13121C10.7355 7.19353 12.0073 6.66675 13.3334 6.66675Z" stroke="#E96103" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M4.99996 7.5H1.66663V17.5H4.99996V7.5Z" stroke="#E96103" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3.33329 5.00008C4.25377 5.00008 4.99996 4.25389 4.99996 3.33341C4.99996 2.41294 4.25377 1.66675 3.33329 1.66675C2.41282 1.66675 1.66663 2.41294 1.66663 3.33341C1.66663 4.25389 2.41282 5.00008 3.33329 5.00008Z" stroke="#E96103" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+
+                        <a href="mailto:bll.taoufik@gmail.com">
+                            <!-- mail -->
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.6666 3.33325H3.33329C2.41282 3.33325 1.66663 4.07944 1.66663 4.99992V14.9999C1.66663 15.9204 2.41282 16.6666 3.33329 16.6666H16.6666C17.5871 16.6666 18.3333 15.9204 18.3333 14.9999V4.99992C18.3333 4.07944 17.5871 3.33325 16.6666 3.33325Z" stroke="#E96103" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M18.3333 5.83325L10.8583 10.5833C10.601 10.7444 10.3036 10.8299 9.99996 10.8299C9.69636 10.8299 9.3989 10.7444 9.14163 10.5833L1.66663 5.83325" stroke="#E96103" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer-line"></div>
+
+            <div class="footer-bottom">
+                <p class="text-size-small text-color-body">© 2026 Taoufik.dev | Tous droits réservés.</p>
+                <p class="text-size-small text-color-body">Conçu et développé avec passion</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
