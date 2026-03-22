@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./DesignGuide/dist/assets/favicon.png" alt="Design Guide Logo" width="120">
+  <img src="./TaoufikDev/public/assets/favicon.png" alt="Taoufik.Dev Logo" width="120">
 </p>
 
 <h1 align="center">Portfolio</h1>
