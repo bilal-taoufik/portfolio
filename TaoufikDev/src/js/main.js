@@ -206,9 +206,35 @@ function contactForm() {
     });
 }
 
+function animScroll() {
+    const elements = document.querySelectorAll(".reveal");
+
+    if (!elements.length) return;
+
+    const observer = new IntersectionObserver(
+        (entries, observerInstance) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("is-visible");
+                    observerInstance.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.15,
+            rootMargin: "0px 0px -10% 0px"
+        }
+    );
+
+    elements.forEach((element) => {
+        observer.observe(element);
+    });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     rotatateTitleHero();
     competencesCarousel();
     headerAnimation();
     contactForm();
+    animScroll();
 });
