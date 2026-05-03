@@ -1,6 +1,5 @@
 <p align="center">
   <img src="./TaoufikDev/public/assets/favicon.png" alt="Taoufik.Dev Logo" width="120">
-</p>
 
 <h1 align="center">Portfolio</h1>
 
