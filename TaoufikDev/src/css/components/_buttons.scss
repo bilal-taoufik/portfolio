@@ -2,121 +2,137 @@
 @use "../partials/mixins" as m;
 
 @layer components {
-    .button {
-        font-family: "Zen Dots", sans-serif;
-        display: flex;
-        width: fit-content;
-        height: f.rem(40);
+
+    .button-expand {
+        position: relative;
+
+        display: inline-flex;
         align-items: center;
-        justify-content: center;
-        padding-right: f.rem(20);
-        padding-left: f.rem(20);
 
-        border: f.rem(2) solid transparent;
-        border-radius: f.rem(999);
+        width: fit-content;
+        min-width: f.rem(180);
+        height: f.rem(48);
 
-        font-weight: 500;
-        font-size: f.rem(14);
-        color: var(--white);
+        padding-left: f.rem(48);
+        padding-right: f.rem(24);
+
         cursor: pointer;
-        text-align: center;
+
+        color: var(--black);
         text-decoration: none;
-        line-height: inherit;
 
-        background-image:
-            linear-gradient(var(--brand), var(--brand)),
-            linear-gradient(90deg, var(--white), var(--brand));
-        background-origin: border-box;
-        background-clip: padding-box, border-box;
+        /* =========================
+        CIRCLE
+        ========================= */
 
+        .button-expand__circle {
+            position: absolute;
 
-        &.is-small {
-            height: auto;
-            padding: f.rem(0) f.rem(26);
-            justify-content: center;
-            align-items: center;
-        }
-        &.is-secondary {
-            color: var(--white);
-            background-image:
-                linear-gradient(var(--brand-grey), var(--brand-grey)),
-                linear-gradient(90deg, var(--brand), var(--white));
-            background-origin: border-box;
-            background-clip: padding-box, border-box;
-        }
-        &.is-full {
-            width: auto;
-        }
-        &.is-disabled {
-            opacity: 0.4;
-            cursor: not-allowed;
-            pointer-events: none;
-            filter: grayscale(0.4);
+            top: 0;
+            left: 0;
+
+            display: block;
+
+            width: f.rem(48);
+            height: f.rem(48);
+
+            margin: 0;
+
+            background-color: var(--black);
+            border-radius: f.rem(999);
+
+            transition:
+                width 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+
+            /* =========================
+            ICON
+            ========================= */
+
+            .button-expand__icon {
+                position: absolute;
+
+                top: 50%;
+                left: 18%;
+
+                width: f.rem(18);
+                height: f.rem(2);
+
+                background-color: transparent;
+
+                transform: translateY(-50%);
+
+                transition:
+                    transform 0.45s cubic-bezier(0.65, 0, 0.076, 1),
+                    background-color 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+
+                &::before {
+                    content: "";
+
+                    position: absolute;
+
+                    top: f.rem(-4);
+                    right: 0;
+
+                    width: f.rem(10);
+                    height: f.rem(10);
+
+                    border-top: f.rem(2) solid var(--white);
+                    border-right: f.rem(2) solid var(--white);
+
+                    transform: rotate(45deg);
+                }
+            }
         }
 
-        &.is-icon {
+        /* =========================
+        TEXT
+        ========================= */
+
+        .button-expand__text {
+            position: relative;
+            z-index: 1;
+
             display: flex;
-            padding-right: f.rem(0);
-            padding-left: f.rem(0);
-            justify-content: center;
             align-items: center;
-            gap: f.rem(12);
-            background-image: none;
-            color: var(--brand);
-            svg {
-                display: flex;
-                width: f.rem(24);
-                height: f.rem(24);
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
+
+            height: 100%;
+
+            padding-left: f.rem(12);
+
+            color: var(--black);
+
+            font-size: f.rem(14);
+            font-weight: 600;
+            line-height: 1;
+
+            white-space: nowrap;
+            text-transform: uppercase;
+
+            transition:
+                color 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+        }
+
+        /* =========================
+        HOVER
+        ========================= */
+
+        &:hover {
+
+            .button-expand__circle {
+                width: 100%;
+
+                .button-expand__icon {
+                    background-color: var(--white);
+
+                    transform:
+                        translate(-80%, -50%);
+                }
+            }
+
+            .button-expand__text {
+                color: var(--white);
             }
         }
     }
 
-    .button-icon {
-        font-family: "Zen Dots", sans-serif;
-        display: flex;
-        width: fit-content;
-        height: f.rem(40);
-        align-items: center;
-        justify-content: center;
-        padding-right: f.rem(20);
-        padding-left: f.rem(20);
-        gap: f.rem(10);
-
-        border: f.rem(2) solid transparent;
-        border-radius: f.rem(999);
-
-        font-weight: 500;
-        font-size: f.rem(14);
-        color: var(--white);
-        cursor: pointer;
-        text-align: center;
-        text-decoration: none;
-        line-height: inherit;
-
-        background-image:
-            linear-gradient(var(--brand), var(--brand)),
-            linear-gradient(90deg, var(--white), var(--brand));
-        background-origin: border-box;
-        background-clip: padding-box, border-box;
-        &.is-secondary {
-            color: var(--white);
-            background-image:
-                linear-gradient(var(--brand-grey), var(--brand-grey)),
-                linear-gradient(90deg, var(--brand), var(--white));
-            background-origin: border-box;
-            background-clip: padding-box, border-box;
-        }
-        &.is-full {
-            width: auto;
-        }
-        &.is-disabled {
-            opacity: 0.4;
-            cursor: not-allowed;
-            pointer-events: none;
-            filter: grayscale(0.4);
-        }
-    }
 }

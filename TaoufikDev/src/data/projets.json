@@ -1,0 +1,110 @@
+[
+    {
+        "id": 1,
+        "slug": "budgie",
+        "title": "Budgie",
+        "category": "Application Web",
+        "tags": [
+            "Laravel",
+            "JavaScript",
+            "PostgreSQL",
+            "Docker"
+        ],
+        "year": 2026,
+        "image": "/assets/projets/budgie/budgie.png",
+        "description": "Développement d'une plateforme de gestion de budget réalisée dans le cadre d'un projet scolaire à l'ESGI.",
+        "featured": true,
+        "website": "https://budgiefinance.fr/",
+        "url": "/projets/budgie.html"
+    },
+    {
+        "id": 2,
+        "slug": "uvitec",
+        "title": "Uvitec Cambridge",
+        "category": "Webflow",
+        "tags": [
+            "Webflow",
+            "CMS",
+            "SEO",
+            "Figma"
+        ],
+        "year": 2026,
+        "image": "/assets/projets/uvitec/uvitec.png",
+        "description": "Migration complète et refonte d'un site WordPress vers Webflow.",
+        "featured": true,
+        "website": "https://uvitec.co.uk/",
+        "url": "/projets/uvitec.html"
+    },
+    {
+        "id": 3,
+        "slug": "uvitec-3d",
+        "title": "Uvitec - Alliance IRIS 3D",
+        "category": "Interface 3D",
+        "tags": [
+            "Three.js",
+            "Tween.js",
+            "SCSS",
+            "Blender"
+        ],
+        "year": 2025,
+        "image": "/assets/projets/uvitec/alliance-iris-3D.png",
+        "description": "Développement d'une interface produit 3D interactive avec Three.js, Tween.js, SCSS et Blender.",
+        "featured": false,
+        "website": "https://alliance-iris-demo.uvitec.co.uk/",
+        "url": "/projets/uvitec-3d.html"
+    },
+    {
+        "id": 4,
+        "slug": "oh-my-clean-services",
+        "title": "Oh My Clean Services",
+        "category": "Application Web",
+        "tags": [
+            "Laravel",
+            "JavaScript",
+            "SCSS",
+            "SEO"
+        ],
+        "year": 2026,
+        "image": "/assets/projets/ohmycleanservices/oh-my-clean-services.png",
+        "description": "Développement d'un site web professionnel générant plus de 50 devis par mois.",
+        "featured": false,
+        "website": "https://www.ohmycleanservices.fr/",
+        "url": "/projets/oh-my-clean-services.html"
+    },
+    {
+        "id": 5,
+        "slug": "vilber",
+        "title": "Vilber",
+        "category": "Webflow",
+        "tags": [
+            "Webflow",
+            "CMS",
+            "SEO",
+            "Figma"
+        ],
+        "year": 2026,
+        "image": "/assets/projets/vilber/vilber.png",
+        "description": "Reprise, maintenance et évolution d'un site web développé sous Webflow.",
+        "featured": false,
+        "website": "https://vilber.com/",
+        "url": "/projets/vilber.html"
+    },
+    {
+        "id": 6,
+        "slug": "vilber-3d",
+        "title": "Vilber - Fusion Absolute 3D",
+        "category": "Interface 3D",
+        "tags": [
+            "Three.js",
+            "Tween.js",
+            "SCSS",
+            "Blender"
+        ],
+        "year": 2025,
+        "image": "/assets/projets/vilber/fusion-absolute-3D.png",
+        "description": "Développement d'une interface produit 3D interactive avec Three.js, Tween.js, SCSS et Blender.",
+        "featured": false,
+        "website": "https://fusion-absolute.vilber.com/",
+        "url": "/projets/vilber-3d.html"
+    }
+]

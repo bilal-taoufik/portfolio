@@ -18,13 +18,8 @@
 @use "components/header";
 @use "components/footer";
 @use "components/form";
-@use "components/cards";
-@use "components/cookies";
-@use "components/details";
 
-@use "pages/design-guide";
 @use "pages/accueil";
-@use "pages/contact";
 @use "pages/mentions-legales";
 @use "pages/projets";
-
+@use "pages/_projets-details";
