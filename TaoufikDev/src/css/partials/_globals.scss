@@ -26,15 +26,10 @@
 
   body{
     font-family: ff.$mainFont;
-    background-color: var(--black);
+    background-color: var(--white);
     color: var(--black);
     font-size: f.rem(16);
     line-height: 1.5;
     margin: 0;
-  }
-
-  img {
-    max-width: 100%;
-    height: auto;
   }
 }

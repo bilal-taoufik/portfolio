@@ -36,8 +36,8 @@
 
     // padding classes
     .padding-global {
-        padding-right: 7%;
-        padding-left: 7%;
+        padding-right: 8.5%;
+        padding-left: 8.5%;
     }
     .padding-section-small {
         padding-top: f.rem(48);
@@ -50,11 +50,34 @@
     .padding-section-large {
         margin-right: f.rem(0);
         margin-left: f.rem(0);
-        padding-top: f.rem(80);
-        padding-bottom: f.rem(80);
+        padding-top: f.rem(100);
+        padding-bottom: f.rem(100);
     }
 
 
+    // responsive section spacing
+    @media screen and (max-width: 1024px) {
+        .padding-section-large {
+            padding-top: f.rem(72);
+            padding-bottom: f.rem(72);
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .padding-section-large {
+            padding-top: f.rem(56);
+            padding-bottom: f.rem(56);
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+        .padding-section-large {
+            padding-top: f.rem(40);
+            padding-bottom: f.rem(40);
+        }
+    }
+
+    
     // padding direction classes
     .padding-bottom {
         padding-top: f.rem(0) !important;

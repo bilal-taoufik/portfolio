@@ -1,754 +1,869 @@
 @use "../partials/variables" as v;
 @use "../partials/functions" as f;
 
-@layer pages {
-    .section_hero-accueil {
-        width: 100%;
-        min-height: 100svh;
-        position: relative;
-        overflow: hidden;
+@layer components {
 
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    .section-home-hero {
+        padding-bottom: f.rem(100);
 
-        background-image: url("/assets/bg-hero.png");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-
-        .hero-content {
+        .home-hero-card {
             width: 100%;
-            min-height: 100svh;
-            height: 100svh;
+            min-height: f.rem(800);
+
             position: relative;
-            z-index: 1;
-            .hero-layout {
-                width: 100%;
-                height: 100svh;
-
-                display: flex;
-                align-items: center;
-                justify-content: flex-end;
-                .hero-text-wrapper {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: flex-end;
-                    text-align: right;
-                    .hero-title-group {
-                        display: flex;
-                        flex-direction: column;
-                        align-items: flex-end;
-                        width: 100%;
-                        .h1-hero {
-                            font-family: "Zen Dots", sans-serif;
-                            font-size: f.rem(96);
-                        }
-                        .hero-rotating-text {
-                            position: relative;
-                            height: f.rem(96);
-                            overflow: hidden;
-                            width: 100%;
-                            margin-top: f.rem(8);
-
-                            span {
-                                position: absolute;
-                                right: 0;
-                                width: 100%;
-                                height: 100%;
-                                display: flex;
-                                align-items: center;
-                                justify-content: flex-end;
-                                line-height: 1;
-                                white-space: nowrap;
-                                margin: 0;
-                                &.h2-hero {
-                                    font-family: "Zen Dots", sans-serif;
-                                    font-size: f.rem(64);
-                                }
-                            }
-
-                            .is-active {
-                                transform: translateY(0);
-                                opacity: 1;
-                            }
-
-                            .is-next {
-                                transform: translateY(100%);
-                                opacity: 1;
-                            }
-
-                            .is-animating-out {
-                                transition: transform 0.7s ease, opacity 0.7s ease;
-                                transform: translateY(-100%);
-                            }
-
-                            .is-animating-in {
-                                transition: transform 0.7s ease, opacity 0.7s ease;
-                                transform: translateY(0);
-                            }
-                        }
-                    }
-                    .hero-button-group {
-                        display: flex;
-                        align-items: center;
-                        gap: f.rem(24);
-                        margin-top: f.rem(34);
-                    }
-                }
-
-            }
-        }
-    }
-
-
-    .section_projet-accueil {
-        .projet-wrapper {
-            width: 100%;
-            margin: 0;
-            .header-title {
-                display: flex;
-                align-items: center;
-                gap: f.rem(32);
-                .header-title-line {
-                    flex: 1 1 auto;
-                    min-width: 0; // autorise la ligne à se rétrécir
-                    height: f.rem(3);
-                    background-color: var(--brand);
-                }
-            }
-            .grid-2col {
-                display: grid;
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-                gap: f.rem(24);
-            }
-            .button-wrapper {
-                display: flex;
-                justify-content: center;
-                width: 100%;
-            }
-        }
-    }
-
-    .section_competences-accueil {
-        position: relative;
-        background-color: var(--black);
-        overflow: visible; // important pour ne pas couper l'orb
-
-        &::before {
-            content: "";
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -40%);
-
-            width: 1400px;
-            height: 200px;
-
-            border-radius: 50%;
-
-            background: radial-gradient(
-                ellipse at center,
-                rgba(233, 97, 3) 0%,
-                rgba(233, 97, 0.25) 25%,
-                rgba(233, 97, 0.18) 55%,
-                rgba(233, 97, 0) 75%
-            );
-
-            filter: blur(200px);
-            z-index: 0;
-            pointer-events: none;
-        }
-        .competences-marquee {
-            position: relative;
-            width: 100%;
             overflow: hidden;
-            user-select: none;
-            padding: f.rem(20) 0;
-            .competences-track {
+
+            .home-hero-visual {
+                position: absolute;
+                inset: 0;
+
                 display: flex;
                 align-items: center;
-                gap: f.rem(30);
-                width: max-content;
-                will-change: transform;
-                .competence-card {
-                    flex: 0 0 auto;
-                    width: f.rem(95);
-                    min-height: f.rem(136);
-                    padding: f.rem(10) f.rem(8);
-                    border-radius: f.rem(20);
-                    background-color: var(--brand-grey);
+                justify-content: center;
+
+                background-color: var(--brand);
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+
+                    object-fit: none;
+                    object-position: center;
+                }
+            }
+
+            .home-hero-content {
+                position: absolute;
+
+                left: f.rem(40);
+                right: f.rem(40);
+                bottom: f.rem(40);
+
+                z-index: 2;
+
+                .home-hero-text {
+                    color: var(--white);
+                }
+            }
+        }
+
+
+        /* =========================
+           DESKTOP
+        ========================= */
+
+        @media screen and (max-width: 1280px) {
+
+            .home-hero-card {
+                min-height: f.rem(620);
+            }
+        }
+
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media screen and (max-width: 1024px) {
+
+            .home-hero-card {
+                min-height: f.rem(560);
+
+                .home-hero-content {
+                    left: f.rem(32);
+                    right: f.rem(32);
+                    bottom: f.rem(32);
+                }
+            }
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media screen and (max-width: 768px) {
+            padding-top: f.rem(12);
+            padding-bottom: f.rem(70);
+
+            .home-hero-card {
+                min-height: f.rem(420);
+
+                .home-hero-visual {
+
+                    img {
+                        object-fit: cover;
+                        object-position: center;
+                    }
+                }
+
+                .home-hero-content {
+                    left: f.rem(20);
+                    right: f.rem(20);
+                    bottom: f.rem(20);
+
+                    .home-hero-text {
+                        max-width: f.rem(320);
+
+                        font-size: f.rem(24);
+                        line-height: 1.15;
+                    }
+                }
+            }
+        }
+
+
+        /* =========================
+           SMALL MOBILE
+        ========================= */
+
+        @media screen and (max-width: 576px) {
+
+            .home-hero-card {
+                min-height: f.rem(380);
+
+                .home-hero-visual {
+
+                    img {
+                        object-fit: cover;
+                        object-position: center;
+                    }
+                }
+
+                .home-hero-content {
+                    left: f.rem(16);
+                    right: f.rem(16);
+                    bottom: f.rem(16);
+
+                    .home-hero-text {
+                        max-width: f.rem(280);
+
+                        font-size: f.rem(20);
+                        line-height: 1.2;
+                    }
+                }
+            }
+        }
+
+
+        /* =========================
+           VERY SMALL MOBILE
+        ========================= */
+
+        @media screen and (max-width: 390px) {
+
+            .home-hero-card {
+                min-height: f.rem(350);
+
+                .home-hero-content {
+
+                    .home-hero-text {
+                        font-size: f.rem(16);
+                    }
+                }
+            }
+        }
+    }
+
+    .section-home-skills {
+
+        .component-skills {
+            display: flex;
+            flex-direction: column;
+            gap: f.rem(32);
+        }
+
+
+        /* =========================
+           HEADING
+        ========================= */
+
+        .section-heading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: f.rem(8);
+
+            .section-heading-square {
+                width: f.rem(6);
+                height: f.rem(6);
+
+                display: block;
+                flex-shrink: 0;
+
+                background-color: var(--black);
+            }
+        }
+
+
+        /* =========================
+           LIST
+        ========================= */
+
+        .skills-list {
+            display: flex;
+            flex-direction: column;
+
+            gap: f.rem(24);
+
+
+            /* =========================
+               CARD
+            ========================= */
+
+            .skill-card {
+                width: 100%;
+                min-height: f.rem(500);
+
+                position: relative;
+                overflow: hidden;
+
+                display: flex;
+                align-items: flex-end;
+
+                padding: f.rem(30);
+
+                background-color: #000000;
+                color: var(--white);
+
+
+                /* ICONS */
+
+                .skill-icons {
+                    position: absolute;
+
+                    top: f.rem(24);
+                    left: f.rem(24);
+
+                    z-index: 3;
+
                     display: flex;
-                    flex-direction: column;
+                    align-items: center;
+
+                    gap: f.rem(10);
+
+                    img {
+                        width: f.rem(42);
+                        height: f.rem(42);
+
+                        display: block;
+                        object-fit: contain;
+                    }
+                }
+
+
+                /* VISUAL */
+
+                .skill-visual {
+                    position: absolute;
+
+                    top: f.rem(24);
+                    right: f.rem(24);
+
+                    width: 50%;
+                    height: 100%;
+
+                    display: flex;
+                    align-items: flex-start;
+                    justify-content: flex-end;
+
+                    img {
+                        width: 70%;
+                        height: 100%;
+
+                        display: block;
+
+                        object-fit: contain;
+                        object-position: top right;
+                    }
+                }
+
+
+                /* CONTENT */
+
+                .skill-content {
+                    position: relative;
+                    z-index: 2;
+
+                    width: 55%;
+                    max-width: f.rem(650);
+                }
+            }
+
+
+            /* BACKGROUNDS */
+
+            .skill-card:nth-child(2) {
+                background-color: #101010;
+            }
+
+            .skill-card:nth-child(3) {
+                background-color: #202020;
+            }
+
+            .skill-card:nth-child(4) {
+                background-color: #353434;
+            }
+        }
+
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .skills-cta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .skills-project-link {
+                display: inline-flex;
+                align-items: center;
+
+                gap: f.rem(8);
+
+                color: var(--black);
+
+                font-size: f.rem(12);
+                font-weight: 400;
+
+                text-decoration: none;
+                text-transform: uppercase;
+
+                .skills-project-icon {
+                    width: f.rem(26);
+                    height: f.rem(26);
+
+                    display: flex;
                     align-items: center;
                     justify-content: center;
-                    gap: f.rem(16);
-                    text-align: center;
-                    transition: transform 0.3s ease, background-color 0.3s ease;
-                    transform-origin: center center;
-                    svg {
-                        width: f.rem(50);
-                        height: f.rem(50);
+
+                    border-radius: 50%;
+
+                    background-color: var(--black);
+                    color: var(--white);
+
+                    transition: transform 0.3s ease;
+                }
+
+                &:hover {
+
+                    .skills-project-icon {
+                        transform: translateX(f.rem(4));
                     }
-                    span {
-                        overflow: hidden;
-                        white-space: nowrap;
-                        text-overflow: ellipsis;
+                }
+            }
+        }
+
+
+        /* =========================
+           DESKTOP
+        ========================= */
+
+        @media screen and (max-width: 1280px) {
+
+            .skills-list {
+
+                .skill-card {
+                    min-height: f.rem(400);
+
+                }
+            }
+        }
+
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media screen and (max-width: 1024px) {
+
+            .skills-list {
+
+                .skill-card {
+                    min-height: f.rem(380);
+
+                    .skill-content {
+                        width: 58%;
+
+                        h2 {
+                            font-size: f.rem(34);
+                        }
+                    }
+
+                    .skill-visual {
+                        width: 45%;
+                    }
+                }
+            }
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media screen and (max-width: 768px) {
+
+            .section-heading {
+                margin-bottom: f.rem(36);
+            }
+
+            .skills-list {
+                gap: f.rem(18);
+
+                .skill-card {
+                    min-height: f.rem(500);
+
+                    padding: f.rem(20);
+
+                    align-items: flex-end;
+
+                    .skill-icons {
+                        top: f.rem(16);
+                        left: f.rem(16);
+
+                        img {
+                            width: f.rem(34);
+                            height: f.rem(34);
+                        }
+                    }
+
+                    .skill-visual {
+                        top: 0;
+                        right: 0;
+
                         width: 100%;
-                    }
+                        height: 52%;
 
-                    &:hover {
-                        transform: scale(1.08);
-                        background-color: var(--brand-grey-hover);
-                    }
-                }
-            }
-        }
-    }
+                        display: flex;
+                        align-items: flex-start;
+                        justify-content: center;
 
-    .section_formation-accueil {
-        .formation-wrapper {
-            width: 100%;
-            margin: 0;
-            .header-title {
-                display: flex;
-                align-items: center;
-                gap: f.rem(32);
-                .header-title-line {
-                    flex: 1 1 auto;
-                    min-width: 0; // autorise la ligne à se rétrécir
-                    height: f.rem(3);
-                    background-color: var(--brand);
-                }
-            }
-            .formation-grid {
-                display: grid;
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-                gap: f.rem(24);
-            }
-            .button-wrapper {
-                display: flex;
-                justify-content: center;
-                width: 100%;
-            }
-        }
-    }
+                        img {
+                            width: 100%;
+                            height: 100%;
 
-    /* =========================
-    LARGE DESKTOPS
-    ========================= */
-    @media screen and (min-width: 1600px) {
-        .section_hero-accueil {
-            .hero-content {
-                .hero-layout {
-                    .hero-text-wrapper {
-                        max-width: f.rem(980);
-
-                        .hero-title-group {
-                            .h1-hero {
-                                font-size: f.rem(112);
-                            }
-
-                            .hero-rotating-text {
-                                height: f.rem(112);
-
-                                span {
-                                    &.h2-hero {
-                                        font-size: f.rem(72);
-                                    }
-                                }
-                            }
+                            object-fit: contain;
+                            object-position: top center;
                         }
                     }
-                }
-            }
-        }
 
-        .section_competences-accueil {
-            &::before {
-                width: 1700px;
-                height: 260px;
-                filter: blur(240px);
-            }
-        }
-    }
-
-    /* =========================
-    DESKTOP STANDARD
-    ========================= */
-    @media screen and (max-width: 1440px) {
-        .section_hero-accueil {
-            .hero-content {
-                .hero-layout {
-                    .hero-text-wrapper {
-                        max-width: f.rem(860);
-
-                        .hero-title-group {
-                            .h1-hero {
-                                font-size: f.rem(88);
-                            }
-
-                            .hero-rotating-text {
-                                height: f.rem(88);
-
-                                span {
-                                    &.h2-hero {
-                                        font-size: f.rem(58);
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    @media screen and (max-width: 1280px) {
-        .section_hero-accueil {
-            background-position: center center;
-
-            .hero-content {
-                .hero-layout {
-                    .hero-text-wrapper {
-                        max-width: f.rem(760);
-
-                        .hero-title-group {
-                            .h1-hero {
-                                font-size: f.rem(76);
-                            }
-
-                            .hero-rotating-text {
-                                height: f.rem(76);
-
-                                span {
-                                    &.h2-hero {
-                                        font-size: f.rem(52);
-                                    }
-                                }
-                            }
-                        }
-
-                        .hero-button-group {
-                            gap: f.rem(18);
-                            margin-top: f.rem(28);
-                        }
-                    }
-                }
-            }
-        }
-
-        .section_competences-accueil {
-            &::before {
-                width: 1200px;
-                height: 180px;
-                filter: blur(180px);
-            }
-
-            .competences-marquee {
-                .competences-track {
-                    gap: f.rem(24);
-
-                    .competence-card {
-                        width: f.rem(88);
-                        min-height: f.rem(126);
-                    }
-                }
-            }
-        }
-    }
-
-    /* =========================
-    TABLET / SMALL LAPTOP
-    ========================= */
-    @media screen and (max-width: 1024px) {
-        .section_hero-accueil {
-            min-height: 100svh;
-            height: auto;
-            background-position: center top;
-
-            .hero-content {
-                min-height: 100svh;
-                height: auto;
-
-                .hero-layout {
-                    height: auto;
-                    min-height: 100svh;
-                    justify-content: center;
-
-                    .hero-text-wrapper {
+                    .skill-content {
                         width: 100%;
-                        max-width: f.rem(720);
-                        align-items: center;
-                        text-align: center;
+                        max-width: 100%;
 
-                        .hero-title-group {
-                            align-items: center;
-
-                            .h1-hero {
-                                font-size: f.rem(72);
-                            }
-
-                            .hero-rotating-text {
-                                height: f.rem(72);
-
-                                span {
-                                    justify-content: center;
-                                    right: auto;
-                                    width: 100%;
-
-                                    &.h2-hero {
-                                        font-size: f.rem(48);
-                                    }
-                                }
-                            }
-                        }
-
-                        .hero-button-group {
-                            justify-content: center;
-                            flex-wrap: wrap;
-                            gap: f.rem(16);
-                        }
-                    }
-                }
-            }
-        }
-
-        .section_projet-accueil {
-            .projet-wrapper {
-                .header-title {
-                    gap: f.rem(20);
-                }
-
-                .grid-2col {
-                    grid-template-columns: 1fr;
-                }
-            }
-        }
-
-        .section_competences-accueil {
-            &::before {
-                width: 1000px;
-                height: 180px;
-                filter: blur(150px);
-            }
-
-            .competences-marquee {
-                .competences-track {
-                    gap: f.rem(20);
-
-                    .competence-card {
-                        width: f.rem(84);
-                        min-height: f.rem(118);
-                        gap: f.rem(12);
-                    }
-                }
-            }
-        }
-
-        .section_formation-accueil {
-            .formation-wrapper {
-                .header-title {
-                    gap: f.rem(20);
-                }
-
-                .formation-grid {
-                    grid-template-columns: 1fr;
-                }
-            }
-        }
-    }
-
-    /* =========================
-    TABLET PORTRAIT
-    ========================= */
-    @media screen and (max-width: 768px) {
-        .section_hero-accueil {
-            padding-top: f.rem(140);
-            padding-bottom: f.rem(96);
-            background-size: cover;
-            background-position: left center;
-
-            .hero-content {
-                min-height: auto;
-                height: auto;
-
-                .hero-layout {
-                    min-height: auto;
-                    height: auto;
-                    justify-content: center;
-
-                    .hero-text-wrapper {
-                        align-items: center;
-                        text-align: center;
-
-                        .hero-title-group {
-                            .h1-hero {
-                                font-size: f.rem(60);
-                            }
-
-                            .hero-rotating-text {
-                                margin-top: f.rem(6);
-                                height: f.rem(60);
-
-                                span {
-                                    justify-content: center;
-
-                                    &.h2-hero {
-                                        font-size: f.rem(40);
-                                    }
-                                }
-                            }
+                        h2 {
+                            font-size: f.rem(28);
+                            line-height: 1.1;
                         }
 
                         p {
-                            max-width: 100%;
-                        }
-
-                        .hero-button-group {
-                            width: 100%;
-                            flex-direction: column;
-                            align-items: center;
-                            gap: f.rem(14);
-
-                            .button,
-                            a.button {
-                                width: 100%;
-                                max-width: f.rem(260);
-                            }
+                            font-size: f.rem(13);
+                            line-height: 1.45;
                         }
                     }
                 }
             }
         }
 
-        .section_projet-accueil {
-            .projet-wrapper {
-                .header-title {
-                    gap: f.rem(14);
 
-                    .header-title-line {
-                        height: f.rem(2);
-                    }
-                }
-            }
-        }
+        /* =========================
+           SMALL MOBILE
+        ========================= */
 
-        .section_competences-accueil {
-            &::before {
-                width: 800px;
-                height: 140px;
-                filter: blur(120px);
-                transform: translate(-50%, -35%);
-            }
+        @media screen and (max-width: 576px) {
 
-            .competences-marquee {
-                padding: f.rem(16) 0;
+            .skills-list {
 
-                .competences-track {
-                    gap: f.rem(16);
+                .skill-card {
+                    min-height: f.rem(460);
 
-                    .competence-card {
-                        width: f.rem(76);
-                        min-height: f.rem(108);
-                        padding: f.rem(8) f.rem(6);
-                        border-radius: f.rem(16);
-                        gap: f.rem(10);
+                    padding: f.rem(18);
 
-                        svg {
-                            width: f.rem(38);
-                            height: f.rem(38);
-                        }
+                    .skill-icons {
+                        top: f.rem(240);
+                        left: f.rem(18);
 
-                        &:hover {
-                            transform: scale(1.04);
-                        }
-                    }
-                }
-            }
-        }
-
-        .section_formation-accueil {
-            .formation-wrapper {
-                .header-title {
-                    gap: f.rem(14);
-
-                    .header-title-line {
-                        height: f.rem(2);
-                    }
-                }
-            }
-        }
-    }
-
-    /* =========================
-    MOBILE LARGE
-    ========================= */
-    @media screen and (max-width: 576px) {
-        .section_hero-accueil {
-            padding-top: f.rem(120);
-            padding-bottom: f.rem(72);
-            background-position: left top;
-
-            .hero-content {
-                .hero-layout {
-                    .hero-text-wrapper {
-                        .hero-title-group {
-                            .h1-hero {
-                                font-size: f.rem(40);
-                                line-height: 0.95;
-                            }
-
-                            .hero-rotating-text {
-                                height: f.rem(48);
-
-                                span {
-                                    &.h2-hero {
-                                        font-size: f.rem(34);
-                                    }
-                                }
-                            }
-                        }
-
-                        .hero-button-group {
-                            margin-top: f.rem(22);
-                        }
-                    }
-                }
-            }
-        }
-
-        .section_projet-accueil {
-            .projet-wrapper {
-                .header-title {
-                    gap: f.rem(10);
-                    flex-wrap: nowrap;
-
-                    .header-title-line {
-                        min-width: 0;
-                    }
-                }
-            }
-        }
-
-        .section_competences-accueil {
-            &::before {
-                width: 620px;
-                height: 120px;
-                filter: blur(100px);
-            }
-
-            .competences-marquee {
-                .competences-track {
-                    gap: f.rem(14);
-
-                    .competence-card {
-                        width: f.rem(68);
-                        min-height: f.rem(96);
-                        border-radius: f.rem(14);
-                        svg {
+                        img {
                             width: f.rem(32);
                             height: f.rem(32);
                         }
                     }
-                }
-            }
-        }
 
-        .section_formation-accueil {
-            .formation-wrapper {
-                .header-title {
-                    gap: f.rem(10);
-                    flex-wrap: nowrap;
+                    .skill-visual {
+                        height: 50%;
 
-                    .header-title-line {
-                        min-width: 0;
+                        img {
+                            object-fit: contain;
+                            object-position: top center;
+                            padding: f.rem(16);
+                        }
                     }
-                }
-            }
-        }
-    }
 
-    /* =========================
-    SMALL MOBILE
-    ========================= */
-    @media screen and (max-width: 390px) {
-        .section_hero-accueil {
-            padding-top: f.rem(108);
-            padding-bottom: f.rem(64);
+                    .skill-content {
 
-            .hero-content {
-                .hero-layout {
-                    .hero-text-wrapper {
-                        .hero-title-group {
-                            .h1-hero {
-                                font-size: f.rem(32);
-                            }
-
-                            .hero-rotating-text {
-                                height: f.rem(40);
-
-                                span {
-                                    &.h2-hero {
-                                        font-size: f.rem(28);
-                                    }
-                                }
-                            }
+                        h2 {
+                            font-size: f.rem(26);
+                            line-height: 1.1;
                         }
 
-                        .hero-button-group {
-                            .button,
-                            a.button {
-                                max-width: 100%;
-                            }
+                        p {
+                            font-size: f.rem(12);
+                            line-height: 1.45;
                         }
                     }
                 }
             }
-        }
 
-        .section_competences-accueil {
-            .competences-marquee {
-                .competences-track {
-                    .competence-card {
-                        width: f.rem(62);
-                        min-height: f.rem(90);
-                    }
-                }
+            .skills-cta {
+                margin-top: f.rem(26);
             }
         }
-    }
 
-    /* =========================
-    VERY SHORT VIEWPORTS
-    ========================= */
-    @media screen and (max-height: 760px) and (min-width: 769px) {
-        .section_hero-accueil {
-            .hero-content {
-                .hero-layout {
-                    .hero-text-wrapper {
-                        .hero-title-group {
-                            .h1-hero {
-                                font-size: f.rem(32);
-                            }
 
-                            .hero-rotating-text {
-                                height: f.rem(72);
+        /* =========================
+           VERY SMALL MOBILE
+        ========================= */
 
-                                span {
-                                    &.h2-hero {
-                                        font-size: f.rem(46);
-                                    }
-                                }
-                            }
+        @media screen and (max-width: 390px) {
+
+            .skills-list {
+
+                .skill-card {
+                    min-height: f.rem(440);
+
+                    .skill-content {
+
+                        h2 {
+                            font-size: f.rem(24);
                         }
 
-                        .hero-button-group {
-                            margin-top: f.rem(20);
+                        p {
+                            font-size: f.rem(11);
                         }
                     }
                 }
             }
         }
     }
+
+    .section-home-career {
+
+        .component-formation {
+            display: flex;
+            flex-direction: column;
+            gap: f.rem(32);
+        }
+
+
+        /* =========================
+           HEADING
+        ========================= */
+
+        .section-heading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: f.rem(8);
+
+            .section-heading-square {
+                width: f.rem(6);
+                height: f.rem(6);
+
+                flex-shrink: 0;
+
+                background-color: var(--black);
+            }
+        }
+
+
+        /* =========================
+           GRID
+        ========================= */
+
+        .career-grid {
+            display: grid;
+
+            grid-template-columns: 2fr 1fr;
+            gap: f.rem(20);
+
+            .career-card {
+                position: relative;
+
+                min-height: f.rem(280);
+
+                overflow: hidden;
+
+                display: flex;
+                align-items: flex-end;
+
+                padding: f.rem(28);
+
+                background-color: var(--brand);
+                color: var(--white);
+
+
+                /* IMAGE */
+
+                .career-card__image {
+                    position: absolute;
+                    inset: 0;
+
+                    width: 100%;
+                    height: 100%;
+
+                    display: block;
+
+                    object-fit: cover;
+                    object-position: top center;
+
+                    opacity: 0.4;
+
+                    transition: transform 0.5s ease;
+
+                    &.is-unlye {
+                        opacity: 1;
+                    }
+                }
+
+
+                /* YEAR */
+
+                .career-card__year {
+                    position: absolute;
+
+                    top: f.rem(18);
+                    right: f.rem(18);
+
+                    z-index: 2;
+
+                    color: var(--white);
+
+                    font-size: f.rem(14);
+                    font-weight: 400;
+                    line-height: 1;
+                }
+
+
+                /* CONTENT */
+
+                .career-card__content {
+                    position: relative;
+                    z-index: 2;
+
+                    .career-card__title {
+                        margin: 0 0 f.rem(8);
+
+                        color: var(--white);
+
+                        font-size: f.rem(28);
+                        font-weight: 500;
+                        line-height: 1;
+                    }
+
+                    .career-card__description {
+                        margin: 0;
+
+                        color: var(--white);
+
+                        font-size: f.rem(13);
+                        font-weight: 400;
+                        line-height: 1.4;
+                    }
+                }
+
+
+                /* HOVER */
+
+                &:hover {
+
+                    .career-card__image {
+                        transform: scale(1.03);
+                    }
+                }
+            }
+
+
+            .career-card--large {
+                grid-column: span 1;
+            }
+
+            .career-card--small {
+                grid-column: span 1;
+            }
+
+            .career-card--full {
+                grid-column: 1 / -1;
+
+                min-height: f.rem(260);
+            }
+        }
+
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .career-cta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media screen and (max-width: 1024px) {
+
+            .career-grid {
+                grid-template-columns: 1.5fr 1fr;
+
+                .career-card {
+                    min-height: f.rem(250);
+
+                    padding: f.rem(24);
+
+                    .career-card__content {
+
+                        .career-card__title {
+                            font-size: f.rem(24);
+                        }
+                    }
+                }
+
+                .career-card--full {
+                    min-height: f.rem(230);
+                }
+            }
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media screen and (max-width: 768px) {
+
+            .section-heading {
+                margin-bottom: f.rem(36);
+            }
+
+            .career-grid {
+                grid-template-columns: 1fr;
+
+                gap: f.rem(16);
+
+                .career-card,
+                .career-card--large,
+                .career-card--small,
+                .career-card--full {
+                    grid-column: auto;
+
+                    min-height: f.rem(230);
+                }
+
+                .career-card {
+                    padding: f.rem(20);
+
+                    .career-card__image {
+                        object-fit: cover;
+                        object-position: center;
+
+                        &.is-unlye {
+                            object-fit: cover;
+                            object-position: center;
+                        }
+                    }
+
+                    .career-card__year {
+                        top: f.rem(14);
+                        right: f.rem(14);
+
+                        font-size: f.rem(12);
+                    }
+
+                    .career-card__content {
+
+                        .career-card__title {
+                            font-size: f.rem(22);
+                            line-height: 1.05;
+                        }
+
+                        .career-card__description {
+                            font-size: f.rem(12);
+                        }
+                    }
+                }
+            }
+        }
+
+
+        /* =========================
+           SMALL MOBILE
+        ========================= */
+
+        @media screen and (max-width: 576px) {
+
+            .career-grid {
+
+                .career-card,
+                .career-card--large,
+                .career-card--small,
+                .career-card--full {
+                    min-height: f.rem(210);
+                }
+
+                .career-card {
+                    padding: f.rem(18);
+
+                    .career-card__year {
+                        top: f.rem(12);
+                        right: f.rem(12);
+
+                        font-size: f.rem(11);
+                    }
+
+                    .career-card__content {
+
+                        .career-card__title {
+                            font-size: f.rem(20);
+                        }
+
+                        .career-card__description {
+                            font-size: f.rem(11);
+                        }
+                    }
+                }
+            }
+
+            .career-cta {
+                margin-top: f.rem(28);
+            }
+        }
+
+
+        /* =========================
+           VERY SMALL MOBILE
+        ========================= */
+
+        @media screen and (max-width: 390px) {
+
+            .career-grid {
+
+                .career-card,
+                .career-card--large,
+                .career-card--small,
+                .career-card--full {
+                    min-height: f.rem(195);
+                }
+            }
+        }
+    }
+
 }

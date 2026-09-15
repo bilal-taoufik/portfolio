@@ -1,196 +1,308 @@
 @use "../partials/functions" as f;
 
 @layer components {
-    .footer-wrapper{
-        margin-top:auto;
-        background-color:var(--brand-grey);
-    }
-    .footer-grid{
-        display:grid;
-        grid-template-columns:2fr 1fr 1fr 1fr;
-        gap:f.rem(60);
+
+    .footer-wrapper {
+        width: 100%;
+        margin-top: auto;
+        background-color: var(--white);
     }
 
-    .footer-brand svg{
-        margin-bottom:f.rem(24);
+
+    .footer-component {
+        width: 100%;
     }
 
-    .footer-description{
-        max-width:f.rem(360);
-        color:var(--grey);
-        line-height:1.6;
-    }
+    .footer-decoration {
+        width: 100%;
+        margin-top: f.rem(50);
 
-    .footer-links ul{
-        list-style:none;
-        padding:0;
-    }
+        display: flex;
+        justify-content: center;
+        
 
-    .footer-links li{
-        margin-bottom:f.rem(12);
-    }
+        svg {
+            display: block;
 
-    .footer-links a{
-        color:var(--body);
-        text-decoration:none;
-        transition:color .3s;
-    }
-
-    .footer-links a:hover{
-        color:var(--brand);
-    }
-
-    .social-icons{
-        display:flex;
-        gap:f.rem(20);
-    }
-
-    .social-icons a{
-        display:flex;
-        align-items:center;
-    }
-
-    .footer-line{
-        margin:f.rem(50) 0;
-        height:f.rem(2);
-        background:var(--brand);
-        width:100%;
-    }
-
-    .footer-bottom{
-        display:flex;
-        justify-content:space-between;
-    }
-
-    /* =========================
-       DESKTOP STANDARD
-    ========================= */
-    @media screen and (max-width: 1440px) {
-        .footer-grid {
-            grid-template-columns: 1.8fr 1fr 1fr 1fr;
-            gap: f.rem(48);
+            width: 100%;
+            height: auto;
         }
     }
+
+
+    /* =========================
+       TOP
+    ========================= */
+
+    .footer-top {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: start;
+        gap: f.rem(80);
+    }
+
+
+    /* =========================
+       BRAND
+    ========================= */
+
+    .footer-brand {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-logo {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        margin-bottom: f.rem(20);
+
+        text-decoration: none;
+
+        svg {
+            width: f.rem(44);
+            height: f.rem(44);
+            display: block;
+        }
+    }
+
+    .footer-description {
+        margin: 0;
+
+        max-width: f.rem(330);
+
+        color: var(--black);
+
+        font-size: f.rem(14);
+        font-weight: 400;
+        line-height: 1.4;
+    }
+
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    .footer-navigation {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+
+        gap: f.rem(90);
+    }
+
+    .footer-column {
+        min-width: f.rem(120);
+    }
+
+    .footer-title {
+        margin: 0 0 f.rem(22);
+
+        color: var(--black);
+
+        font-size: f.rem(13);
+        font-weight: 700;
+        line-height: 1;
+
+        text-transform: uppercase;
+    }
+
+    .footer-list {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: f.rem(14);
+
+        margin: 0;
+        padding: 0;
+
+        list-style: none;
+
+        li {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            color: var(--black);
+
+            font-size: f.rem(13);
+            font-weight: 400;
+            line-height: 1.2;
+
+            text-decoration: none;
+        }
+    }
+
+
+    /* =========================
+       BOTTOM
+    ========================= */
+
+    .footer-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        margin-top: f.rem(70);
+    }
+
+    .footer-copyright {
+        margin: 0;
+
+        color: var(--black);
+
+        font-size: f.rem(12);
+        font-weight: 400;
+        line-height: 1;
+    }
+
+    .footer-legal {
+        display: flex;
+        align-items: center;
+
+        gap: f.rem(24);
+
+        a {
+            color: var(--black);
+
+            font-size: f.rem(12);
+            font-weight: 400;
+            line-height: 1;
+
+            text-decoration: none;
+
+            transition: opacity 0.3s ease;
+        }
+    }
+
+
+    /* =========================
+       DESKTOP
+    ========================= */
 
     @media screen and (max-width: 1280px) {
-        .footer-grid {
-            grid-template-columns: 1.6fr 1fr 1fr 1fr;
-        }
 
-        .social-icons {
-            gap: f.rem(16);
-        }
-
-        .footer-line {
-            margin: f.rem(40) 0;
+        .footer-navigation {
+            gap: f.rem(60);
         }
     }
 
+
     /* =========================
-       TABLET / SMALL LAPTOP
+       TABLET
     ========================= */
+
     @media screen and (max-width: 1024px) {
-        .footer-grid {
+
+        .footer-top {
             grid-template-columns: 1fr;
-            gap: f.rem(40) f.rem(32);
+            gap: f.rem(60);
+        }
+
+        .footer-navigation {
+            width: 100%;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: f.rem(40);
         }
 
         .footer-bottom {
-            flex-wrap: wrap;
+            margin-top: f.rem(60);
         }
     }
 
+
     /* =========================
-       TABLET PORTRAIT
+       MOBILE
     ========================= */
+
     @media screen and (max-width: 768px) {
-        .footer-grid {
-            grid-template-columns: 1fr 1fr;
-            gap: f.rem(32) f.rem(24);
-        }
 
-        .footer-brand svg {
-            margin-bottom: f.rem(18);
-        }
+        .footer-navigation {
+            grid-template-columns: repeat(2, 1fr);
 
-        .social-icons {
-            gap: f.rem(14);
-            flex-wrap: wrap;
-        }
-
-        .footer-line {
-            margin: f.rem(32) 0;
+            gap: f.rem(45) f.rem(30);
         }
 
         .footer-bottom {
             flex-direction: column;
             align-items: flex-start;
-            justify-content: flex-start;
-            gap: f.rem(10);
+
+            gap: f.rem(22);
+
+            margin-top: f.rem(55);
         }
     }
 
-    /* =========================
-       MOBILE LARGE
-    ========================= */
-    @media screen and (max-width: 576px) {
-        .footer-grid {
-            grid-template-columns: 1fr;
-            gap: f.rem(28);
-        }
-
-        .footer-links li {
-            margin-bottom: f.rem(10);
-        }
-
-        .social-icons {
-            gap: f.rem(12);
-        }
-
-        .footer-line {
-            margin: f.rem(28) 0;
-        }
-
-        .footer-bottom {
-            gap: f.rem(8);
-        }
-    }
 
     /* =========================
        SMALL MOBILE
     ========================= */
-    @media screen and (max-width: 390px) {
-        .footer-grid {
-            gap: f.rem(24);
+
+    @media screen and (max-width: 576px) {
+
+        .footer-top {
+            gap: f.rem(45);
         }
 
-        .footer-brand svg {
-            margin-bottom: f.rem(14);
+        .footer-navigation {
+            grid-template-columns: 1fr;
+
+            gap: f.rem(38);
         }
 
-        .social-icons {
-            gap: f.rem(10);
+        .footer-title {
+            margin-bottom: f.rem(16);
         }
 
-        .footer-line {
-            margin: f.rem(24) 0;
-        }
-    }
-
-    /* =========================
-       VERY SHORT VIEWPORTS
-    ========================= */
-    @media screen and (max-height: 760px) and (min-width: 769px) {
-        .footer-grid {
-            gap: f.rem(32);
-        }
-
-        .footer-line {
-            margin: f.rem(28) 0;
+        .footer-list {
+            gap: f.rem(12);
         }
 
         .footer-bottom {
-            gap: f.rem(16);
+            margin-top: f.rem(50);
+        }
+
+        .footer-legal {
+            gap: f.rem(18);
+        }
+    }
+
+
+    /* =========================
+       SMALL MOBILE
+    ========================= */
+
+    @media screen and (max-width: 390px) {
+
+        .footer-logo {
+            margin-bottom: f.rem(16);
+
+            svg {
+                width: f.rem(38);
+                height: f.rem(38);
+            }
+        }
+
+        .footer-description {
+            font-size: f.rem(13);
+        }
+
+        .footer-title {
+            font-size: f.rem(12);
+        }
+
+        .footer-list a {
+            font-size: f.rem(12);
+        }
+
+        .footer-copyright,
+        .footer-legal a {
+            font-size: f.rem(11);
         }
     }
 }
