@@ -308,9 +308,19 @@
             }
 
             .project-related__grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-
+                display: flex;
+                flex-direction: row;
                 gap: f.rem(18);
+
+                overflow-x: auto;
+                overflow-y: hidden;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+
+                .related-project-card {
+                    flex: 0 0 calc(50% - f.rem(9));
+                    scroll-snap-align: start;
+                }
             }
         }
     }
@@ -372,9 +382,9 @@
             padding-bottom: f.rem(80);
 
             .project-related__grid {
-                grid-template-columns: 1fr;
-
-                gap: f.rem(18);
+                .related-project-card {
+                    flex-basis: 85%;
+                }
             }
         }
     }

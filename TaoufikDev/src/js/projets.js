@@ -4,6 +4,11 @@ const projectsGrid = document.querySelector("#projectsGrid");
 const projectsFilters = document.querySelector("#projectsFilters");
 
 const projects = projectsData;
+const requestedFilter = new URLSearchParams(window.location.search).get("filter");
+const availableCategories = new Set(projects.map((project) => project.category));
+const initialFilter = availableCategories.has(requestedFilter)
+    ? requestedFilter
+    : "Tous";
 
 function renderProjects(projectsToDisplay) {
     projectsGrid.innerHTML = "";
@@ -57,7 +62,7 @@ function renderProjects(projectsToDisplay) {
 }
 
 
-function renderFilters(projectsData) {
+function renderFilters(projectsData, activeCategory = "Tous") {
     const categories = [
         "Tous",
         ...new Set(
@@ -73,7 +78,7 @@ function renderFilters(projectsData) {
         button.type = "button";
         button.className = "projects-filter";
 
-        if (index === 0) {
+        if (category === activeCategory) {
             button.classList.add("is-active");
         }
 
@@ -118,6 +123,10 @@ projectsFilters?.addEventListener("click", (event) => {
 
 
 if (projectsGrid && projectsFilters) {
-    renderProjects(projects);
-    renderFilters(projects);
+    const initialProjects = initialFilter === "Tous"
+        ? projects
+        : projects.filter((project) => project.category === initialFilter);
+
+    renderProjects(initialProjects);
+    renderFilters(projects, initialFilter);
 }

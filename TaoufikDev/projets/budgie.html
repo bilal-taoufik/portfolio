@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="/src/js/main.js"></script>
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <title>Budgie | Projet Taoufik.dev</title>
+    <meta name="description" content="Développement de Budgie, plateforme web de gestion de budget avec Laravel, JavaScript, PostgreSQL et Docker.">
+    <meta name="author" content="Bilal Taoufik">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://taoufik.dev/projets/budgie.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Budgie | Projet Taoufik.dev">
+    <meta property="og:description" content="Développement de Budgie, plateforme web de gestion de budget avec Laravel, JavaScript, PostgreSQL et Docker.">
+    <meta property="og:url" content="https://taoufik.dev/projets/budgie.html">
+    <meta property="og:image" content="https://taoufik.dev/assets/projets/budgie/budgie.png">
+    <meta property="og:site_name" content="Taoufik.dev">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Budgie | Projet Taoufik.dev">
+    <meta name="twitter:description" content="Développement de Budgie, plateforme web de gestion de budget avec Laravel, JavaScript, PostgreSQL et Docker.">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header-wrapper">
+        <div class="padding-global">
+            <div class="header-component">
+
+                <!-- Logo home -->
+                <a href="/index.html" class="header-logo-link" aria-label="Accueil">
+                    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19.1513 43.1594L25.437 54L37.7311 22.6261C40.1345 13.9536 35.1429 10 32.4622 10H10L17.2101 22.6261H26.4538C27.1008 22.6261 27.0084 23.3913 26.8235 23.7739L19.1513 43.1594Z" fill="#0B0B0B"/>
+                        <path d="M37.7311 22.6261H49.1933L54 10.1275H44.9412C43.9244 10.1275 41.6134 12.0406 40.1345 16.1217L37.7311 22.6261Z" fill="#0B0B0B"/>
+                    </svg>
+                </a>
+
+                <!-- Menu Burger -->
+                <button
+                    class="header-menu-button"
+                    type="button"
+                    aria-label="Ouvrir le menu"
+                    aria-expanded="false"
+                    aria-controls="headerNav"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <!-- Onglets -->
+                <nav class="header-nav" id="headerNav" aria-label="Navigation principale">
+
+                    <ul class="header-nav-list header-nav-list--left">
+                        <li class="header-nav-item">
+                            <a href="/projets.html?filter=Webflow" class="header-nav-link">
+                                <span class="header-nav-square"></span>
+                                Webflow
+                            </a>
+                        </li>
+
+                        <li class="header-nav-item">
+                            <a href="/projets.html?filter=Interface%203D" class="header-nav-link">
+                                <span class="header-nav-square"></span>
+                                Interface 3D
+                            </a>
+                        </li>
+
+                        <li class="header-nav-item">
+                            <a href="/projets.html?filter=Application%20Web" class="header-nav-link">
+                                <span class="header-nav-square"></span>
+                                Application Web
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul class="header-nav-list header-nav-list--right">
+                        <li class="header-nav-item">
+                            <a href="/ressources.html" class="header-nav-link">
+                                <span class="header-nav-square"></span>
+                                Ressources
+                            </a>
+                        </li>
+
+                        <li class="header-nav-item">
+                            <a href="/contact.html" class="header-nav-link">
+                                <span class="header-nav-square"></span>
+                                Contact
+                            </a>
+                        </li>
+                    </ul>
+
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main class="main-wrapper">
+        <div class="page-wrapper">
+            <section class="project-detail-intro">
+                <div class="padding-global padding-section-large">
+                    <div class="project-detail-intro__content">
+                        <div class="max-width-large text-align-center">
+                            <h1 class="heading-style-h1-bold">
+                                Conception et développement full stack d'une application de gestion financière avec Laravel, PostgreSQL et JavaScript.
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="project-detail-hero">
+                <div class="padding-global padding-section-large">
+                    <div class="project-detail-hero__visual">
+                        <img src="/assets/projets/budgie/budgie.png" alt="Projet Budgie">
+                    </div>
+                    <div class="project-detail-meta">
+                        <div class="project-detail-tags">
+                            <span class="text-size-regular">Laravel</span>
+                            <span class="text-size-regular">JavaScript</span>
+                            <span class="text-size-regular">PostgreSQL</span>
+                            <span class="text-size-regular">Docker</span>
+                        </div>
+                        <div class="project-detail-year">
+                            <span class="project-detail-square"></span>
+                            <span class="text-size-regular">2026</span>
+                        </div>
+                    </div>
+                    <div class="project-detail-description-row">
+                        <div class="max-width-medium">
+                            <p class="text-size-regular">
+                                <strong>
+                                    Budgie Finance
+                                </strong>
+                                est une application web de gestion financière personnelle conçue pour centraliser et suivre simplement son budget. Elle permet de visualiser ses revenus, ses dépenses et l'évolution de ses finances afin de mieux comprendre et maîtriser son argent au quotidien.                            </p>
+                        </div>
+                        <div class="project-detail-website">
+                            <a href="https://budgiefinance.fr/" target="_blank" rel="noopener noreferrer" class="button-expand">
+                                <span class="button-expand__circle" aria-hidden="true">
+                                    <span class="button-expand__icon"></span>
+                                </span>
+                                <span class="button-expand__text">Voir le site</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="project-detail-section">
+                <div class="padding-global padding-section-large">
+                    <div class="project-detail-section__heading">
+                        <h2 class="heading-style-h1-bold">
+                            Simple,
+                            <br>
+                            Personnel et Maîtrisé
+                        </h2>
+                    </div>
+
+                    <div class="project-detail-gallery project-detail-gallery--2">
+                        <div class="project-detail-gallery__item">
+                            <img
+                                src="/assets/projets/budgie/design-desktop.png"
+                                alt="Interface desktop Budgie"
+                            >
+                        </div>
+
+                        <div class="project-detail-gallery__item">
+                            <img
+                                src="/assets/projets/budgie/design-mobile.png"
+                                alt="Interface mobile Budgie"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="project-detail-copy">
+                        <p class="text-size-regular">
+                           <strong>Budgie</strong> a été conçu pour rendre <strong>la gestion financière personnelle plus simple et plus lisible.</strong> L'objectif est de centraliser revenus, dépenses, comptes et objectifs au sein d'une interface claire, sans complexifier l'expérience utilisateur. Le design privilégie une lecture rapide des informations et une navigation intuitive, aussi bien sur ordinateur que sur mobile.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="project-detail-section project-detail-section--seo">
+                <div class="padding-global padding-section-large">
+                    <div class="project-detail-section__heading">
+                        <h2 class="heading-style-h1-bold">
+                            SEO et
+                            <br>
+                            Performances
+                        </h2>
+                    </div>
+
+                    <div class="project-detail-performance">
+                        <img
+                            src="/assets/projets/budgie/performance.png"
+                            alt="Scores de performance du site Budgie"
+                        >
+                    </div>
+
+                    <div class="project-detail-copy">
+                        <p class="text-size-regular">
+                            Budgie repose sur une architecture développée avec Laravel, PostgreSQL et JavaScript. L'application intègre la gestion des utilisateurs, des comptes, des revenus et dépenses ainsi que leur catégorisation et leur visualisation sous forme de graphiques. Une attention particulière a été portée à la structuration des données, à la sécurité et à la maintenabilité de l'application.                        
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="project-related">
+                <div class="padding-global padding-section-large">
+
+                    <div class="project-related__heading">
+                        <h2 class="heading-style-h1-bold">Autres projets</h2>
+                    </div>
+
+                    <div class="project-related__grid">
+
+                        <a href="/projets/oh-my-clean-services.html" class="related-project-card">
+                            <div class="related-project-card__visual">
+                                <img
+                                    src="/assets/projets/ohmycleanservices/oh-my-clean-services.png"
+                                    alt="Oh My Clean Services"
+                                >
+                            </div>
+
+                            <div class="related-project-card__content">
+                                <div class="margin-bottom margin-small">
+                                    <h3 class="heading-style-h4-bold">Oh My Clean Services</h3>
+                                </div>
+
+                                <p class="text-size-small">
+                                    Développement d'un site professionnel orienté conversion.
+                                </p>
+                            </div>
+                        </a>
+
+                        <a href="/projets/uvitec.html" class="related-project-card">
+                            <div class="related-project-card__visual">
+                                <img
+                                    src="/assets/projets/uvitec/minia-card-projet.png"
+                                    alt="Uvitec Cambridge"
+                                >
+                            </div>
+
+                            <div class="related-project-card__content">
+                                <div class="margin-bottom margin-small">
+                                    <h3 class="heading-style-h4-bold">Uvitec Cambridge</h3>
+                                </div>
+
+                                <p class="text-size-small">
+                                    Migration complète et refonte d'un site WordPress vers Webflow.
+                                </p>
+                            </div>
+                        </a>
+
+                        <a href="/projets/vilber-3d.html" class="related-project-card">
+                            <div class="related-project-card__visual">
+                                <img
+                                    src="/assets/projets/vilber/fusion-absolute-3D.png"
+                                    alt="Vilber - Fusion Absolute 3D"
+                                >
+                            </div>
+
+                            <div class="related-project-card__content">
+                                <div class="margin-bottom margin-small">
+                                    <h3 class="heading-style-h4-bold">Vilber - Fusion Absolute 3D</h3>
+                                </div>
+
+                                <p class="text-size-small">
+                                    Développement d'une expérience produit 3D immersive.
+                                </p>
+                            </div>
+                        </a>
+
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-wrapper">
+        <div class="padding-global">
+            <div class="footer-component">
+
+                <div class="footer-top">
+
+                    <div class="footer-brand">
+                        <a href="/index.html" class="footer-logo" aria-label="Accueil">
+                            <svg width="40" height="40" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.1513 43.1594L25.437 54L37.7311 22.6261C40.1345 13.9536 35.1429 10 32.4622 10H10L17.2101 22.6261H26.4538C27.1008 22.6261 27.0084 23.3913 26.8235 23.7739L19.1513 43.1594Z" fill="#0B0B0B"/>
+                                <path d="M37.7311 22.6261H49.1933L54 10.1275H44.9412C43.9244 10.1275 41.6134 12.0406 40.1345 16.1217L37.7311 22.6261Z" fill="#0B0B0B"/>
+                            </svg>
+                        </a>
+
+                        <p class="footer-description">
+                            Passionné par la création de solutions web<br>
+                            modernes et performantes.
+                        </p>
+                    </div>
+
+
+                    <div class="footer-navigation">
+
+                        <div class="footer-column">
+                            <h3 class="footer-title">MENU</h3>
+
+                            <ul class="footer-list">
+                                <li>
+                                    <a href="/index.html">Accueil</a>
+                                </li>
+                                <li>
+                                    <a href="/ressources.html">Ressources</a>
+                                </li>
+                                <li>
+                                    <a href="/projets.html">Mes projets</a>
+                                </li>
+                            </ul>
+                        </div>
+
+
+                        <div class="footer-column">
+                            <h3 class="footer-title">PROJETS</h3>
+
+                            <ul class="footer-list">
+                                <li>
+                                    <a href="/projets/uvitec.html">Uvitec Cambridge</a>
+                                </li>
+                                <li>
+                                    <a href="/projets/vilber.html">Vilber</a>
+                                </li>
+                                <li>
+                                    <a href="/projets/oh-my-clean-services.html">OhMyCleanServices</a>
+                                </li>
+                                <li>
+                                    <a href="/projets/budgie.html">Budgie</a>
+                                </li>
+                            </ul>
+                        </div>
+
+
+                        <div class="footer-column">
+                            <h3 class="footer-title">CONTACT</h3>
+
+                            <ul class="footer-list">
+                                <li>
+                                    <a href="https://www.linkedin.com/in/bilal-t-642597275/"
+                                    target="_blank"
+                                    rel="noopener noreferrer">
+                                        Linkedin
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="/contact.html">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="footer-bottom">
+
+                    <p class="footer-copyright">
+                        © 2026 Taoufik.dev | Tous droits réservés.
+                    </p>
+
+                    <div class="footer-legal">
+
+                        <!-- <a
+                            fs-cc="open-preferences"
+                            role="button"
+                            tabindex="0"
+                            title="Cookie Preferences"
+                            aria-label="Cookie Preferences"
+                            href="#"
+                        >
+                            Cookies
+                        </a> -->
+
+                        <a href="/mentions-legales.html">
+                            Mentions légales
+                        </a>
+
+                    </div>
+
+                </div>
+                
+                <div class="footer-decoration" aria-hidden="true">
+                    <svg width="1200" height="108" viewBox="0 0 1200 108" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g filter="url(#filter0_f_2087_777)">
+                    <path d="M63.2773 150.58L86.1345 190L130.84 75.913C139.58 44.3768 121.429 30 111.681 30H30L56.2185 75.913H89.8319C92.1849 75.913 91.8487 78.6957 91.1765 80.087L63.2773 150.58Z" fill="#0B0B0B"/>
+                    <path d="M130.84 75.913H172.521L190 30.4638H157.059C153.361 30.4638 144.958 37.4203 139.58 52.2609L130.84 75.913Z" fill="#0B0B0B"/>
+                    <path d="M1108.68 132.938L1072.38 32.2686H1094.65L1121.44 108.693L1148.24 32.2686H1170.5L1134.06 132.938H1108.68Z" fill="#0B0B0B"/>
+                    <path d="M976.693 132.938V32.2686H1046.74V50.4175H998.245V73.529H1045.04V91.3944H998.245V114.789H1047.87V132.938H976.693Z" fill="#0B0B0B"/>
+                    <path d="M862.682 132.938V32.2686H897.42C913.773 32.2686 926.345 36.664 935.136 45.4549C943.926 54.1513 948.322 66.5814 948.322 82.7453C948.322 98.8146 943.974 111.198 935.277 119.894C926.676 128.59 914.34 132.938 898.271 132.938H862.682ZM884.233 114.789H897.42C907.156 114.789 914.34 112.19 918.972 106.991C923.698 101.698 926.061 93.5685 926.061 82.6035C926.061 71.6385 923.698 63.5566 918.972 58.3576C914.34 53.0642 907.156 50.4175 897.42 50.4175H884.233V114.789Z" fill="#0B0B0B"/>
+                    <path d="M704.305 132.938V32.2686H725.856V76.223L762.438 32.2686H787.535L750.528 76.6484L789.803 132.938H765.274L736.349 91.1108L725.856 103.305V132.938H704.305Z" fill="#0B0B0B"/>
+                    <path d="M647.617 132.938V32.2686H669.169V132.938H647.617Z" fill="#0B0B0B"/>
+                    <path d="M549.805 132.938V32.2686H619.281V50.4175H559.446L571.357 38.0819V84.1632L559.446 74.8051H616.729V92.6705H559.446L571.357 83.3124V132.938H549.805Z" fill="#0B0B0B"/>
+                    <path d="M473.272 135.207C464.764 135.207 457.391 133.648 451.153 130.528C445.008 127.409 440.235 122.966 436.832 117.2C433.429 111.339 431.728 104.486 431.728 96.6407V32.127H453.279V96.6407C453.279 103.163 454.981 108.22 458.384 111.812C461.881 115.31 466.844 117.058 473.272 117.058C479.699 117.058 484.615 115.31 488.018 111.812C491.42 108.22 493.122 103.163 493.122 96.6407V32.127H514.674V96.6407C514.674 104.486 512.972 111.339 509.569 117.2C506.261 122.966 501.487 127.409 495.249 130.528C489.01 133.648 481.684 135.207 473.272 135.207Z" fill="#0B0B0B"/>
+                    <path d="M354.116 135.207C343.908 135.207 335.117 133.08 327.744 128.827C320.465 124.573 314.841 118.523 310.871 110.678C306.995 102.832 305.058 93.5213 305.058 82.7453C305.058 71.9694 306.995 62.6586 310.871 54.813C314.841 46.8728 320.465 40.7759 327.744 36.5223C335.117 32.1741 343.908 30 354.116 30C364.325 30 373.069 32.1741 380.347 36.5223C387.72 40.7759 393.345 46.8728 397.22 54.813C401.19 62.6586 403.175 71.9694 403.175 82.7453C403.175 93.5213 401.19 102.832 397.22 110.678C393.345 118.523 387.72 124.573 380.347 128.827C373.069 133.08 364.325 135.207 354.116 135.207ZM353.975 117.058C359.646 117.058 364.467 115.735 368.437 113.088C372.502 110.347 375.574 106.424 377.653 101.32C379.827 96.2152 380.914 90.0238 380.914 82.7453C380.914 75.4669 379.827 69.2754 377.653 64.171C375.574 58.9721 372.502 55.002 368.437 52.2608C364.467 49.5196 359.646 48.1489 353.975 48.1489C348.398 48.1489 343.624 49.5196 339.654 52.2608C335.684 55.002 332.612 58.9721 330.438 64.171C328.358 69.2754 327.318 75.4669 327.318 82.7453C327.318 90.0238 328.358 96.2152 330.438 101.32C332.612 106.424 335.684 110.347 339.654 113.088C343.719 115.735 348.492 117.058 353.975 117.058Z" fill="#0B0B0B"/>
+                    <path d="M190 132.938L226.298 32.2686H251.82L288.118 132.938H265.715L258.342 111.528H219.634L212.261 132.938H190ZM225.731 93.8048H252.387L239.059 54.9547L225.731 93.8048Z" fill="#0B0B0B"/>
+                    </g>
+                    <defs>
+                    <filter id="filter0_f_2087_777" x="-0.250977" y="-30" width="1200.75" height="250" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                    <feGaussianBlur stdDeviation="15" result="effect1_foregroundBlur_2087_777"/>
+                    </filter>
+                    </defs>
+                    </svg>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
