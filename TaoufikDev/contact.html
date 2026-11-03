@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'nonce-vite-dev-only' https://fonts.googleapis.com; img-src 'self' data:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://formspree.io; form-action https://formspree.io; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'nonce-vite-dev-only' https://fonts.googleapis.com; img-src 'self' data:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
     <script type="module" src="/src/js/main.js"></script>
-    <script type="module" src="/src/js/contact.js"></script>
     <link rel="icon" type="image/png" href="/assets/favicon.png">
 
     <title>Contact | Taoufik.dev</title>
@@ -80,15 +79,22 @@
                     </ul>
 
                     <ul class="header-nav-list header-nav-list--right">
+                        <!--
                         <li class="header-nav-item">
                             <a href="/ressources.html" class="header-nav-link">
                                 <span class="header-nav-square"></span>
                                 Ressources
                             </a>
                         </li>
+                        -->
 
                         <li class="header-nav-item">
-                            <a href="/contact.html" class="header-nav-link">
+                            <a
+                                href="https://www.linkedin.com/in/bilal-t-642597275/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="header-nav-link"
+                            >
                                 <span class="header-nav-square"></span>
                                 Contact
                             </a>
@@ -160,82 +166,26 @@
 
                         <div class="contact-form-panel">
                             <div class="contact-form-heading">
-                                <span>Votre demande</span>
+                                <span>Me contacter</span>
                             </div>
 
-                            <form
-                                class="contact-form"
-                                id="contactForm"
-                                action="https://formspree.io/f/xwvnkdoj"
-                                method="POST"
-                            >
-
-                                <input type="hidden" name="_subject" value="Nouveau message depuis Taoufik.dev">
-                                <label class="contact-honeypot" aria-hidden="true">
-                                    Ne pas remplir ce champ
-                                    <input
-                                        type="text"
-                                        name="_gotcha"
-                                        tabindex="-1"
-                                        autocomplete="off"
-                                    >
-                                </label>
-
-                                <div class="contact-form-row">
-                                    <label class="contact-field">
-                                        <span>Nom</span>
-                                        <input
-                                            type="text"
-                                            name="name"
-                                            autocomplete="name"
-                                            minlength="2"
-                                            maxlength="80"
-                                            placeholder="Votre nom"
-                                            required
-                                        >
-                                    </label>
-
-                                    <label class="contact-field">
-                                        <span>Email</span>
-                                        <input
-                                            type="email"
-                                            name="email"
-                                            autocomplete="email"
-                                            maxlength="254"
-                                            inputmode="email"
-                                            placeholder="vous@entreprise.com"
-                                            required
-                                        >
-                                    </label>
-                                </div>
-
-                                <label class="contact-field">
-                                    <span>Message</span>
-                                    <textarea
-                                        name="message"
-                                        rows="7"
-                                        maxlength="3000"
-                                        placeholder="Parlez-moi de votre projet, tant que bénévole ou professionnel, je suis à votre écoute."
-                                        required
-                                    ></textarea>
-                                </label>
-
-                                <button type="submit" class="contact-submit">
-                                    <span>Envoyer le message</span>
-                                </button>
-
-                                <p class="contact-form-status" id="contactFormStatus" role="status" aria-live="polite"></p>
-
-                            </form>
-
-                            <div class="contact-success" id="contactSuccess" hidden>
+                            <div class="contact-success">
                                 <span class="contact-success__square" aria-hidden="true"></span>
-                                <p class="contact-success__eyebrow">Message envoyé</p>
-                                <h2>Merci pour votre message.</h2>
+                                <p class="contact-success__eyebrow">LinkedIn</p>
+                                <h2>Parlons de votre projet.</h2>
                                 <p>
-                                    Votre message a bien été reçu.<br>
-                                    Vous recevrez une réponse bientôt.
+                                    Envoyez-moi un message directement sur LinkedIn.<br>
+                                    Je vous répondrai dès que possible.
                                 </p>
+                                <a
+                                    href="https://www.linkedin.com/in/bilal-t-642597275/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="contact-success__link"
+                                >
+                                    Me contacter sur LinkedIn
+                                    <span aria-hidden="true">↗</span>
+                                </a>
                             </div>
                         </div>
 
@@ -327,9 +277,6 @@
                                     </a>
                                 </li>
 
-                                <li>
-                                    <a href="/contact.html">Contact</a>
-                                </li>
                             </ul>
                         </div>
 
